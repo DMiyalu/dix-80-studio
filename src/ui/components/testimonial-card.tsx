@@ -8,7 +8,7 @@ export function TestimonialCard({
   role: string;
 }) {
   return (
-    <figure className="flex h-full flex-col justify-between border border-border bg-surface p-8 transition-colors hover:border-accent/50">
+    <figure className="flex h-full flex-col justify-between rounded-2xl border border-border bg-surface p-8 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5">
       <svg
         aria-hidden="true"
         className="mb-6 h-8 w-8 text-accent"

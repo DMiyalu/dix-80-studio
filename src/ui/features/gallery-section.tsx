@@ -29,11 +29,11 @@ export function GallerySection({
           title={dict.gallery.title}
         />
 
-        <div className="mt-16 grid auto-rows-[180px] grid-cols-2 gap-2 sm:auto-rows-[220px] lg:grid-cols-4 lg:auto-rows-[240px]">
+        <div className="mt-16 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] lg:grid-cols-4 lg:auto-rows-[240px]">
           {PHOTOS.map((p, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden ${p.h}`}
+              className={`relative overflow-hidden rounded-xl ${p.h}`}
             >
               <Image
                 src={p.src}

@@ -21,9 +21,13 @@ export function Header({
     { href: `${base}/contact`, label: dict.nav.contact },
   ];
 
+  // Hover effect: white glow / subtle drop shadow (no red flash).
+  const navHover =
+    "transition-all duration-200 [text-shadow:0_0_0_rgba(255,255,255,0)] hover:text-white hover:[text-shadow:0_0_18px_rgba(255,255,255,0.85)]";
+
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <Container className="flex h-24 items-center justify-between gap-6">
+      <Container className="relative flex h-28 items-center justify-between gap-6">
         {/* Left: logo */}
         <Link
           href={base}
@@ -33,20 +37,20 @@ export function Header({
           <Image
             src="/images/logo-blanc.svg"
             alt="80Dix Studio"
-            width={140}
-            height={48}
+            width={200}
+            height={68}
             priority
-            className="h-11 w-auto"
+            className="h-16 w-auto md:h-[72px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
           />
         </Link>
 
-        {/* Center: nav */}
-        <nav className="hidden flex-1 items-center justify-center gap-12 md:flex">
+        {/* Center: nav (absolutely positioned for true centering) */}
+        <nav className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-12 md:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs font-medium uppercase tracking-[0.25em] text-white/90 transition-colors hover:text-accent"
+              className={`pointer-events-auto text-sm font-semibold uppercase tracking-[0.22em] text-white/90 ${navHover}`}
             >
               {l.label}
             </Link>
@@ -56,13 +60,14 @@ export function Header({
         {/* Right: socials + lang + book */}
         <div className="flex flex-none items-center gap-5 lg:gap-6">
           <SocialIcons
+            size="md"
             className="hidden sm:flex"
-            iconClassName="text-white/80 hover:text-accent"
+            iconClassName={`text-white ${navHover}`}
           />
-          <span className="hidden h-5 w-px bg-white/25 sm:block" />
+          <span className="hidden h-5 w-px bg-white/30 sm:block" />
           <LangSwitcher
             current={lang}
-            className="text-white/85 [&_a]:text-white/70 [&_a:hover]:text-white [&_[aria-current='page']]:text-white"
+            className={`text-white ${navHover}`}
           />
           <ButtonLink
             href={`${base}/reservation`}

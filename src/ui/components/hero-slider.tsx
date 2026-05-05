@@ -48,9 +48,13 @@ export function HeroSlider({
 
   const current = slides[index];
 
+  // Strong text shadow so titles stay readable on full-color photos.
+  const titleShadow = "[text-shadow:0_2px_24px_rgba(0,0,0,0.55),0_0_2px_rgba(0,0,0,0.35)]";
+  const textShadow = "[text-shadow:0_1px_8px_rgba(0,0,0,0.55)]";
+
   return (
     <section className="relative isolate h-screen min-h-[640px] w-full overflow-hidden bg-black">
-      {/* Slides */}
+      {/* Slides — no full overlay, real colors visible */}
       {slides.map((slide, i) => (
         <div
           key={slide.category}
@@ -61,30 +65,46 @@ export function HeroSlider({
           )}
         >
           <div
-            className="absolute inset-0 bg-cover bg-center scale-105"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url("${slide.imageUrl}")` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-black/70" />
         </div>
       ))}
 
+      {/* Header-only top gradient (for header readability) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-44 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
+      />
+
       {/* Content */}
-      <Container className="relative flex h-full items-center">
+      <Container className="relative z-[2] flex h-full items-center">
         <div className="w-full text-center">
-          <div className="mx-auto mb-6 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/85">
+          <div
+            className={cn(
+              "mx-auto mb-6 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-white",
+              textShadow,
+            )}
+          >
             <span className="h-px w-10 bg-accent" />
             {current.category}
             <span className="h-px w-10 bg-accent" />
           </div>
           <h1
             key={`t-${index}`}
-            className="font-display text-5xl font-semibold leading-[1.05] text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl xl:text-8xl animate-[fadeUp_700ms_ease-out]"
+            className={cn(
+              "font-display text-5xl font-semibold leading-[1.05] text-white sm:text-6xl lg:text-7xl xl:text-8xl animate-[fadeUp_700ms_ease-out]",
+              titleShadow,
+            )}
           >
             {current.title}
           </h1>
           <p
             key={`s-${index}`}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg animate-[fadeUp_900ms_ease-out]"
+            className={cn(
+              "mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/95 sm:text-lg animate-[fadeUp_900ms_ease-out]",
+              textShadow,
+            )}
           >
             {current.subtitle}
           </p>
@@ -94,7 +114,7 @@ export function HeroSlider({
             </ButtonLink>
             <Link
               href={ctaSecondaryHref}
-              className="inline-flex h-14 items-center justify-center border border-white/40 px-8 text-xs font-medium uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-black"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
             >
               {ctaSecondary}
             </Link>
@@ -107,9 +127,9 @@ export function HeroSlider({
         type="button"
         onClick={prev}
         aria-label="Previous slide"
-        className="absolute left-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur transition-colors hover:bg-white hover:text-black md:flex lg:left-8 lg:h-14 lg:w-14"
+        className="absolute left-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-black hover:shadow-lg hover:shadow-white/30 md:flex lg:left-8 lg:h-14 lg:w-14"
       >
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
         </svg>
       </button>
@@ -117,9 +137,9 @@ export function HeroSlider({
         type="button"
         onClick={next}
         aria-label="Next slide"
-        className="absolute right-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur transition-colors hover:bg-white hover:text-black md:flex lg:right-8 lg:h-14 lg:w-14"
+        className="absolute right-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-black hover:shadow-lg hover:shadow-white/30 md:flex lg:right-8 lg:h-14 lg:w-14"
       >
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
         </svg>
       </button>
@@ -133,17 +153,22 @@ export function HeroSlider({
             onClick={() => goTo(i)}
             aria-label={`Slide ${i + 1}: ${s.category}`}
             className={cn(
-              "h-1 transition-all duration-300",
-              i === index ? "w-10 bg-accent" : "w-6 bg-white/40 hover:bg-white/70",
+              "h-1 rounded-full transition-all duration-300",
+              i === index ? "w-10 bg-accent" : "w-6 bg-white/60 hover:bg-white",
             )}
           />
         ))}
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 right-8 z-10 hidden items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-white/60 lg:flex">
+      <div
+        className={cn(
+          "absolute bottom-10 right-8 z-10 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/85 lg:flex",
+          textShadow,
+        )}
+      >
         {scrollLabel}
-        <span className="block h-10 w-px animate-pulse bg-white/50" />
+        <span className="block h-10 w-px animate-pulse bg-white/70" />
       </div>
 
       <style>{`

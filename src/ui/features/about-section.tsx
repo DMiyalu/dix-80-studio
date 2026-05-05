@@ -19,7 +19,7 @@ export function AboutSection({
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2">
-            <div className="relative aspect-square overflow-hidden">
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
               <Image
                 src={PLACEHOLDER}
                 alt="Photographer"

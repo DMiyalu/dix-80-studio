@@ -12,7 +12,6 @@ export function LangSwitcher({
   pathname?: string;
   className?: string;
 }) {
-  // Strip current locale prefix from pathname.
   const stripped = pathname.replace(
     new RegExp(`^/(${i18n.locales.join("|")})(?=/|$)`),
     "",
@@ -22,21 +21,19 @@ export function LangSwitcher({
   return (
     <div
       className={cn(
-        "flex items-center gap-1 text-xs uppercase tracking-widest",
+        "flex items-center gap-1 text-xs font-medium uppercase tracking-widest",
         className,
       )}
     >
       {i18n.locales.map((locale, idx) => (
         <span key={locale} className="flex items-center">
-          {idx > 0 && <span className="mx-1 text-muted/50">/</span>}
+          {idx > 0 && <span className="mx-1.5 opacity-50">·</span>}
           <Link
             href={`/${locale}${rest === "/" ? "" : rest}`}
             aria-current={current === locale ? "page" : undefined}
             className={cn(
-              "transition-colors",
-              current === locale
-                ? "text-foreground"
-                : "text-muted hover:text-foreground",
+              "transition-all",
+              current === locale ? "opacity-100" : "opacity-60 hover:opacity-100",
             )}
           >
             {locale.toUpperCase()}

@@ -4,6 +4,7 @@ import type { Locale } from "@/src/i18n/config";
 import type { Dictionary } from "@/src/i18n/get-dictionary";
 import { Container } from "@/src/ui/components/container";
 import { LangSwitcher } from "@/src/ui/components/lang-switcher";
+import { SocialIcons } from "@/src/ui/components/social-icons";
 
 export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const base = `/${lang}`;
@@ -18,12 +19,12 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               <Image
                 src="/images/logo-rouge.svg"
                 alt="80Dix Studio"
-                width={140}
-                height={48}
-                className="h-10 w-auto"
+                width={220}
+                height={74}
+                className="h-20 w-auto"
               />
             </Link>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
               {dict.footer.tagline}
             </p>
             <p className="mt-4 text-sm text-muted">{dict.footer.address}</p>
@@ -34,6 +35,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {dict.footer.nav}
             </h4>
             <ul className="space-y-3 text-sm text-muted">
+              <li><Link href={base} className="hover:text-accent">{dict.nav.home}</Link></li>
               <li><Link href={`${base}/services`} className="hover:text-accent">{dict.nav.services}</Link></li>
               <li><Link href={`${base}/about`} className="hover:text-accent">{dict.nav.about}</Link></li>
               <li><Link href={`${base}/contact`} className="hover:text-accent">{dict.nav.contact}</Link></li>
@@ -57,11 +59,12 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <ul className="space-y-3 text-sm text-muted">
               <li><a href="mailto:contact@80dixstudio.com" className="hover:text-accent">contact@80dixstudio.com</a></li>
               <li><a href="tel:+18190000000" className="hover:text-accent">+1 (819) 000-0000</a></li>
-              <li className="flex gap-4 pt-2">
-                <a href="#" aria-label="Instagram" className="hover:text-accent">Instagram</a>
-                <a href="#" aria-label="Facebook" className="hover:text-accent">Facebook</a>
-              </li>
             </ul>
+            <SocialIcons
+              size="md"
+              className="mt-5"
+              iconClassName="text-foreground/70 hover:text-accent"
+            />
           </div>
         </div>
 
@@ -72,6 +75,21 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <Link href="#" className="hover:text-foreground">{dict.footer.terms}</Link>
             <LangSwitcher current={lang} />
           </div>
+        </div>
+
+        {/* Agency signature */}
+        <div className="mt-6 flex justify-center border-t border-border/60 pt-6 text-[11px] uppercase tracking-[0.25em] text-muted/70">
+          <span>
+            Crafted by{" "}
+            <a
+              href="https://x-ra.solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-foreground/80 transition-colors hover:text-accent"
+            >
+              X-Ra Solutions
+            </a>
+          </span>
         </div>
       </Container>
     </footer>
