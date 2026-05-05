@@ -5,6 +5,7 @@ import type { Dictionary } from "@/src/i18n/get-dictionary";
 import { Container } from "@/src/ui/components/container";
 import { ButtonLink } from "@/src/ui/components/button";
 import { LangSwitcher } from "@/src/ui/components/lang-switcher";
+import { SocialIcons } from "@/src/ui/components/social-icons";
 
 export function Header({
   lang,
@@ -15,40 +16,54 @@ export function Header({
 }) {
   const base = `/${lang}`;
   const links = [
+    { href: base, label: dict.nav.home },
     { href: `${base}/services`, label: dict.nav.services },
-    { href: `${base}/studio`, label: dict.nav.studio },
-    { href: `${base}/about`, label: dict.nav.about },
     { href: `${base}/contact`, label: dict.nav.contact },
   ];
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <Container className="flex h-20 items-center justify-between">
-        <Link href={base} className="flex items-center" aria-label="80Dix Studio">
+      <Container className="flex h-24 items-center justify-between gap-6">
+        {/* Left: logo */}
+        <Link
+          href={base}
+          aria-label="80Dix Studio"
+          className="flex flex-none items-center"
+        >
           <Image
-            src="/images/logo-rouge.svg"
+            src="/images/logo-blanc.svg"
             alt="80Dix Studio"
-            width={120}
-            height={40}
+            width={140}
+            height={48}
             priority
-            className="h-9 w-auto"
+            className="h-11 w-auto"
           />
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        {/* Center: nav */}
+        <nav className="hidden flex-1 items-center justify-center gap-12 md:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/80 transition-colors hover:text-accent"
+              className="text-xs font-medium uppercase tracking-[0.25em] text-white/90 transition-colors hover:text-accent"
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-6">
-          <LangSwitcher current={lang} />
+        {/* Right: socials + lang + book */}
+        <div className="flex flex-none items-center gap-5 lg:gap-6">
+          <SocialIcons
+            className="hidden sm:flex"
+            iconClassName="text-white/80 hover:text-accent"
+          />
+          <span className="hidden h-5 w-px bg-white/25 sm:block" />
+          <LangSwitcher
+            current={lang}
+            className="text-white/85 [&_a]:text-white/70 [&_a:hover]:text-white [&_[aria-current='page']]:text-white"
+          />
           <ButtonLink
             href={`${base}/reservation`}
             variant="primary"

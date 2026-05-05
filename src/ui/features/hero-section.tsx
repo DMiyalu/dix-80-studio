@@ -1,10 +1,6 @@
 import type { Locale } from "@/src/i18n/config";
 import type { Dictionary } from "@/src/i18n/get-dictionary";
-import { Container } from "@/src/ui/components/container";
-import { ButtonLink } from "@/src/ui/components/button";
-
-const PLACEHOLDER =
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=80";
+import { HeroSlider, type HeroSlide } from "@/src/ui/components/hero-slider";
 
 export function HeroSection({
   lang,
@@ -14,54 +10,67 @@ export function HeroSection({
   dict: Dictionary;
 }) {
   const base = `/${lang}`;
+  const items = dict.services.items;
+
+  // Each slide reflects a service category (placeholder images for now).
+  const slides: HeroSlide[] = [
+    {
+      category: items.wedding.name,
+      title: items.wedding.name,
+      subtitle: items.wedding.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/wedding`,
+    },
+    {
+      category: items.corporate.name,
+      title: items.corporate.name,
+      subtitle: items.corporate.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/corporate`,
+    },
+    {
+      category: items.sport.name,
+      title: items.sport.name,
+      subtitle: items.sport.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/sport`,
+    },
+    {
+      category: items.portrait.name,
+      title: items.portrait.name,
+      subtitle: items.portrait.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1502323777036-f29e3972d82f?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/portrait`,
+    },
+    {
+      category: items.event.name,
+      title: items.event.name,
+      subtitle: items.event.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/event`,
+    },
+    {
+      category: items.family.name,
+      title: items.family.name,
+      subtitle: items.family.desc,
+      imageUrl:
+        "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=2400&q=80",
+      href: `${base}/services/family`,
+    },
+  ];
+
   return (
-    <section className="relative isolate flex min-h-screen items-center overflow-hidden">
-      {/* Placeholder background image */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: `url("${PLACEHOLDER}")` }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-black"
-      />
-
-      <Container className="relative pt-32 pb-24 lg:pb-32">
-        <div className="max-w-3xl">
-          <div className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-accent">
-            <span className="h-px w-10 bg-accent" />
-            {dict.hero.eyebrow}
-          </div>
-          <h1 className="font-display text-5xl font-semibold leading-[1.05] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-            {dict.hero.title_line1}
-            <br />
-            <span className="text-accent">{dict.hero.title_line2}</span>
-          </h1>
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            {dict.hero.subtitle}
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <ButtonLink href={`${base}/services`} variant="primary" size="lg">
-              {dict.hero.cta_primary}
-            </ButtonLink>
-            <ButtonLink
-              href={`${base}/reservation`}
-              variant="secondary"
-              size="lg"
-              className="text-white border-white/30 hover:bg-white hover:text-black"
-            >
-              {dict.hero.cta_secondary}
-            </ButtonLink>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/50 lg:flex">
-          {dict.hero.scroll}
-          <span className="block h-10 w-px animate-pulse bg-white/40" />
-        </div>
-      </Container>
-    </section>
+    <HeroSlider
+      slides={slides}
+      ctaPrimary={dict.hero.cta_primary}
+      ctaSecondary={dict.hero.cta_secondary}
+      ctaSecondaryHref={`${base}/reservation`}
+      scrollLabel={dict.hero.scroll}
+    />
   );
 }
