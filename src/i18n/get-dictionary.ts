@@ -1,1 +1,14 @@
-// Loader de dictionnaire selon la locale (dynamic import).
+import "server-only";
+import type { Locale } from "./config";
+
+const dictionaries = {
+  fr: () => import("./dictionaries/fr.json").then((m) => m.default),
+  en: () => import("./dictionaries/en.json").then((m) => m.default),
+} as const;
+
+export const hasLocale = (locale: string): locale is Locale =>
+  locale in dictionaries;
+
+export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+
+export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;

@@ -1,1 +1,90 @@
-{}
+{
+  "nav": {
+    "services": "Services",
+    "studio": "Studio",
+    "about": "À propos",
+    "contact": "Contact",
+    "book": "Réserver"
+  },
+  "hero": {
+    "eyebrow": "Studio photo · Trois-Rivières",
+    "title_line1": "Capter l'instant.",
+    "title_line2": "Sublimer l'image.",
+    "subtitle": "Photographie professionnelle pour mariages, entreprises, sport et événements. Un studio entièrement équipé au cœur de la Mauricie.",
+    "cta_primary": "Voir nos services",
+    "cta_secondary": "Louer le studio",
+    "scroll": "Découvrir"
+  },
+  "services": {
+    "eyebrow": "Nos spécialités",
+    "title": "Une photographie pour chaque histoire",
+    "subtitle": "Des prestations sur mesure, pensées pour révéler ce qui compte vraiment.",
+    "items": {
+      "wedding": { "name": "Mariage", "desc": "Émotion, élégance, instants volés." },
+      "corporate": { "name": "Corporate", "desc": "Image de marque et portraits pros." },
+      "sport": { "name": "Sport", "desc": "L'intensité figée au millième." },
+      "portrait": { "name": "Portrait", "desc": "Studio ou extérieur, votre meilleur angle." },
+      "event": { "name": "Événementiel", "desc": "Galas, lancements, soirées privées." },
+      "family": { "name": "Famille", "desc": "Souvenirs intemporels à partager." }
+    },
+    "cta": "Tous les services"
+  },
+  "studio": {
+    "eyebrow": "L'espace",
+    "title": "Notre studio à Trois-Rivières",
+    "desc": "Un espace de 1200 pi² baigné de lumière naturelle, équipé pour tous types de productions photo et vidéo.",
+    "features": [
+      "1200 pi² d'espace modulable",
+      "Lumière naturelle + éclairage pro",
+      "Cycloramas blanc et noir",
+      "Stationnement gratuit sur place"
+    ],
+    "cta": "Réserver le studio"
+  },
+  "gallery": {
+    "eyebrow": "Portfolio",
+    "title": "Sélection récente",
+    "cta": "Voir tout le portfolio"
+  },
+  "process": {
+    "eyebrow": "Comment ça marche",
+    "title": "Simple, du premier contact à la livraison",
+    "steps": [
+      { "n": "01", "t": "Choisir un service", "d": "Parcourez nos prestations et trouvez celle qui vous correspond." },
+      { "n": "02", "t": "Réserver une date", "d": "Sélectionnez un créneau directement en ligne." },
+      { "n": "03", "t": "Acompte sécurisé", "d": "Paiement par carte via Stripe, en quelques clics." },
+      { "n": "04", "t": "Séance & livraison", "d": "On capture, on retouche, vous recevez vos images." }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent nos clients",
+    "items": [
+      { "quote": "Une équipe professionnelle, à l'écoute. Les photos de notre mariage sont magnifiques.", "name": "Sophie & Marc", "role": "Mariage · Trois-Rivières" },
+      { "quote": "Photos corporatives livrées rapidement et d'une qualité irréprochable.", "name": "Julien Tremblay", "role": "Directeur, Atelier 3R" },
+      { "quote": "Le studio est superbe, parfait pour notre shooting de collection.", "name": "Marie-Ève L.", "role": "Designer mode" }
+    ]
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Une équipe passionnée d'image",
+    "desc": "Basé à Trois-Rivières, 80Dix Studio capture vos instants depuis plus de 10 ans, avec un œil affûté pour la lumière et l'émotion.",
+    "cta": "Notre histoire"
+  },
+  "cta_final": {
+    "title": "Un projet en tête ?",
+    "subtitle": "Parlons-en. On répond sous 24 heures.",
+    "button": "Nous contacter"
+  },
+  "footer": {
+    "tagline": "Studio photo professionnel à Trois-Rivières.",
+    "nav": "Navigation",
+    "studio_section": "Le studio",
+    "legal": "Légal",
+    "address": "Trois-Rivières, Québec",
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "contact": "Contact"
+  }
+}

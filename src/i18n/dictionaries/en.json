@@ -1,1 +1,90 @@
-{}
+{
+  "nav": {
+    "services": "Services",
+    "studio": "Studio",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book now"
+  },
+  "hero": {
+    "eyebrow": "Photo studio · Trois-Rivières",
+    "title_line1": "Capture the moment.",
+    "title_line2": "Elevate the image.",
+    "subtitle": "Professional photography for weddings, businesses, sports and events. A fully-equipped studio in the heart of Mauricie.",
+    "cta_primary": "Explore services",
+    "cta_secondary": "Rent the studio",
+    "scroll": "Discover"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "A photograph for every story",
+    "subtitle": "Tailored shoots, designed to reveal what truly matters.",
+    "items": {
+      "wedding": { "name": "Wedding", "desc": "Emotion, elegance, stolen moments." },
+      "corporate": { "name": "Corporate", "desc": "Brand image and professional portraits." },
+      "sport": { "name": "Sport", "desc": "Intensity frozen at 1/1000s." },
+      "portrait": { "name": "Portrait", "desc": "Studio or outdoor, your best angle." },
+      "event": { "name": "Events", "desc": "Galas, launches, private parties." },
+      "family": { "name": "Family", "desc": "Timeless memories worth sharing." }
+    },
+    "cta": "All services"
+  },
+  "studio": {
+    "eyebrow": "The space",
+    "title": "Our studio in Trois-Rivières",
+    "desc": "1,200 sq.ft. of modular space bathed in natural light, equipped for any photo or video production.",
+    "features": [
+      "1,200 sq.ft. modular space",
+      "Natural + professional lighting",
+      "White and black cycloramas",
+      "Free on-site parking"
+    ],
+    "cta": "Book the studio"
+  },
+  "gallery": {
+    "eyebrow": "Portfolio",
+    "title": "Recent selection",
+    "cta": "View full portfolio"
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "Simple, from first contact to delivery",
+    "steps": [
+      { "n": "01", "t": "Pick a service", "d": "Browse our offerings and find the right fit." },
+      { "n": "02", "t": "Book a date", "d": "Select a slot directly online." },
+      { "n": "03", "t": "Secure deposit", "d": "Pay by card via Stripe in a few clicks." },
+      { "n": "04", "t": "Shoot & delivery", "d": "We capture, we retouch, you receive your images." }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "items": [
+      { "quote": "A professional, attentive team. Our wedding photos are stunning.", "name": "Sophie & Marc", "role": "Wedding · Trois-Rivières" },
+      { "quote": "Corporate photos delivered fast and flawlessly.", "name": "Julien Tremblay", "role": "Director, Atelier 3R" },
+      { "quote": "The studio is gorgeous, perfect for our collection shoot.", "name": "Marie-Ève L.", "role": "Fashion designer" }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "A team passionate about images",
+    "desc": "Based in Trois-Rivières, 80Dix Studio has been capturing your moments for over 10 years, with a sharp eye for light and emotion.",
+    "cta": "Our story"
+  },
+  "cta_final": {
+    "title": "Got a project in mind?",
+    "subtitle": "Let's talk. We reply within 24 hours.",
+    "button": "Get in touch"
+  },
+  "footer": {
+    "tagline": "Professional photo studio in Trois-Rivières.",
+    "nav": "Navigation",
+    "studio_section": "The studio",
+    "legal": "Legal",
+    "address": "Trois-Rivières, Quebec",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact"
+  }
+}
