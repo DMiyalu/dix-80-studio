@@ -19,9 +19,9 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               <Image
                 src="/images/logo-rouge.svg"
                 alt="80Dix Studio"
-                width={220}
-                height={74}
-                className="h-20 w-auto"
+                width={280}
+                height={94}
+                className="h-28 w-auto md:h-32"
               />
             </Link>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
@@ -57,8 +57,8 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {dict.footer.contact}
             </h4>
             <ul className="space-y-3 text-sm text-muted">
-              <li><a href="mailto:contact@80dixstudio.com" className="hover:text-accent">contact@80dixstudio.com</a></li>
-              <li><a href="tel:+18190000000" className="hover:text-accent">+1 (819) 000-0000</a></li>
+              <li><a href="mailto:contact@dix80studio.com" className="hover:text-accent">contact@dix80studio.com</a></li>
+              <li><a href="tel:+18190000000" className="hover:text-accent">+1 (873) 993-1612</a></li>
             </ul>
             <SocialIcons
               size="md"

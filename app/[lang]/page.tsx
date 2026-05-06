@@ -9,6 +9,7 @@ import { ProcessSection } from "@/src/ui/features/process-section";
 import { TestimonialsSection } from "@/src/ui/features/testimonials-section";
 import { AboutSection } from "@/src/ui/features/about-section";
 import { CtaFinalSection } from "@/src/ui/features/cta-final-section";
+import { Reveal } from "@/src/ui/components/reveal";
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -20,13 +21,13 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <HeroSection lang={locale} dict={dict} />
-      <ServicesSection lang={locale} dict={dict} />
-      <StudioSection lang={locale} dict={dict} />
-      <GallerySection lang={locale} dict={dict} />
-      <ProcessSection dict={dict} />
-      <TestimonialsSection dict={dict} />
-      <AboutSection lang={locale} dict={dict} />
-      <CtaFinalSection lang={locale} dict={dict} />
+      <Reveal><ServicesSection lang={locale} dict={dict} /></Reveal>
+      <Reveal><StudioSection lang={locale} dict={dict} /></Reveal>
+      <Reveal><GallerySection lang={locale} dict={dict} /></Reveal>
+      <Reveal><ProcessSection dict={dict} /></Reveal>
+      <Reveal><TestimonialsSection dict={dict} /></Reveal>
+      <Reveal><AboutSection lang={locale} dict={dict} /></Reveal>
+      <Reveal><CtaFinalSection lang={locale} dict={dict} /></Reveal>
     </>
   );
 }

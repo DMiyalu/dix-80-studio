@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-accent text-white shadow-sm hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/30",
   secondary:
-    "bg-transparent text-foreground border border-foreground/30 hover:border-foreground hover:bg-foreground hover:text-background",
+    "bg-transparent text-foreground border border-foreground hover:shadow-lg hover:shadow-foreground/25",
   ghost: "bg-transparent text-foreground hover:text-accent",
 };
 

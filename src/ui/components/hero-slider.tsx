@@ -19,14 +19,12 @@ export function HeroSlider({
   ctaPrimary,
   ctaSecondary,
   ctaSecondaryHref,
-  scrollLabel,
   intervalMs = 6000,
 }: {
   slides: HeroSlide[];
   ctaPrimary: string;
   ctaSecondary: string;
   ctaSecondaryHref: string;
-  scrollLabel: string;
   intervalMs?: number;
 }) {
   const [index, setIndex] = useState(0);
@@ -158,17 +156,6 @@ export function HeroSlider({
             )}
           />
         ))}
-      </div>
-
-      {/* Scroll indicator */}
-      <div
-        className={cn(
-          "absolute bottom-10 right-8 z-10 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/85 lg:flex",
-          textShadow,
-        )}
-      >
-        {scrollLabel}
-        <span className="block h-10 w-px animate-pulse bg-white/70" />
       </div>
 
       <style>{`

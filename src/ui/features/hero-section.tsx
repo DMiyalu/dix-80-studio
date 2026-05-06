@@ -70,7 +70,6 @@ export function HeroSection({
       ctaPrimary={dict.hero.cta_primary}
       ctaSecondary={dict.hero.cta_secondary}
       ctaSecondaryHref={`${base}/reservation`}
-      scrollLabel={dict.hero.scroll}
     />
   );
 }

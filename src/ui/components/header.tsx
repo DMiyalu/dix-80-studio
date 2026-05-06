@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/src/i18n/config";
 import type { Dictionary } from "@/src/i18n/get-dictionary";
 import { Container } from "@/src/ui/components/container";
 import { ButtonLink } from "@/src/ui/components/button";
 import { LangSwitcher } from "@/src/ui/components/lang-switcher";
 import { SocialIcons } from "@/src/ui/components/social-icons";
+import { cn } from "@/src/ui/lib/cn";
 
 export function Header({
   lang,
@@ -21,13 +25,51 @@ export function Header({
     { href: `${base}/contact`, label: dict.nav.contact },
   ];
 
-  // Hover effect: white glow / subtle drop shadow (no red flash).
-  const navHover =
-    "transition-all duration-200 [text-shadow:0_0_0_rgba(255,255,255,0)] hover:text-white hover:[text-shadow:0_0_18px_rgba(255,255,255,0.85)]";
+  // --- Sticky with scroll-up reveal ---------------------------------------
+  const [scrolled, setScrolled] = useState(false); // past hero threshold
+  const [hidden, setHidden] = useState(false); // hide on scroll-down
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const goingDown = y > lastY;
+        setScrolled(y > 80);
+        // Only hide once we're past the initial hero zone, and only if going down
+        if (y > 200 && goingDown && y - lastY > 4) setHidden(true);
+        else if (!goingDown || y < 80) setHidden(false);
+        lastY = y;
+        ticking = false;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const onLight = scrolled; // when bg becomes white, switch text to dark
+  const navHover = onLight
+    ? "transition-all duration-200 hover:text-accent"
+    : "transition-all duration-200 [text-shadow:0_0_0_rgba(255,255,255,0)] hover:text-white hover:[text-shadow:0_0_18px_rgba(255,255,255,0.85)]";
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <Container className="relative flex h-28 items-center justify-between gap-6">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out",
+        scrolled
+          ? "bg-background/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+          : "bg-transparent",
+        hidden ? "-translate-y-full" : "translate-y-0",
+      )}
+    >
+      <Container
+        className={cn(
+          "relative flex items-center justify-between gap-6 transition-all duration-300",
+          scrolled ? "h-24" : "h-32",
+        )}
+      >
         {/* Left: logo */}
         <Link
           href={base}
@@ -35,12 +77,17 @@ export function Header({
           className="flex flex-none items-center"
         >
           <Image
-            src="/images/logo-blanc.svg"
+            src={onLight ? "/images/logo-rouge.svg" : "/images/logo-blanc.svg"}
             alt="80Dix Studio"
-            width={200}
-            height={68}
+            width={240}
+            height={84}
             priority
-            className="h-16 w-auto md:h-[72px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+            className={cn(
+              "w-auto transition-all duration-300",
+              scrolled
+                ? "h-16 md:h-20"
+                : "h-20 md:h-24 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]",
+            )}
           />
         </Link>
 
@@ -50,7 +97,11 @@ export function Header({
             <Link
               key={l.href}
               href={l.href}
-              className={`pointer-events-auto text-sm font-semibold uppercase tracking-[0.22em] text-white/90 ${navHover}`}
+              className={cn(
+                "pointer-events-auto text-xs font-semibold uppercase tracking-[0.22em]",
+                onLight ? "text-foreground" : "text-white/90",
+                navHover,
+              )}
             >
               {l.label}
             </Link>
@@ -62,12 +113,20 @@ export function Header({
           <SocialIcons
             size="md"
             className="hidden sm:flex"
-            iconClassName={`text-white ${navHover}`}
+            iconClassName={cn(
+              onLight ? "text-foreground" : "text-white",
+              navHover,
+            )}
           />
-          <span className="hidden h-5 w-px bg-white/30 sm:block" />
+          <span
+            className={cn(
+              "hidden h-5 w-px sm:block",
+              onLight ? "bg-foreground/20" : "bg-white/30",
+            )}
+          />
           <LangSwitcher
             current={lang}
-            className={`text-white ${navHover}`}
+            className={cn(onLight ? "text-foreground" : "text-white", navHover)}
           />
           <ButtonLink
             href={`${base}/reservation`}
