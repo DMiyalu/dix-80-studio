@@ -1,1 +1,0 @@
-// Implémentation Firestore de BookingRepository.

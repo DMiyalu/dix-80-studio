@@ -1,1 +1,0 @@
-// Port: PaymentGateway (impl. Stripe).

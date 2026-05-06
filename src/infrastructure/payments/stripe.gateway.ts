@@ -1,1 +1,0 @@
-// Implémentation Stripe de PaymentGateway.
