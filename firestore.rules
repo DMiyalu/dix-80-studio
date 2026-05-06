@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public catalog (read-only) — populated server-side via Admin SDK.
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Bookings/customers are managed exclusively from the server (Admin SDK).
+    // Client SDK has no direct access.
+    match /bookings/{bookingId} {
+      allow read, write: if false;
+    }
+
+    match /customers/{customerId} {
+      allow read, write: if false;
+    }
+
+    // Default deny.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
