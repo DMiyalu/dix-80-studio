@@ -2,13 +2,12 @@ import Image from "next/image";
 import type { Locale } from "@/src/i18n/config";
 import type { Dictionary } from "@/src/i18n/get-dictionary";
 import { Container } from "@/src/ui/components/container";
-import { ButtonLink } from "@/src/ui/components/button";
+import { BookingTrigger } from "@/src/ui/features/booking-modal/booking-trigger";
 
 const PLACEHOLDER =
   "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?auto=format&fit=crop&w=1600&q=80";
 
 export function StudioSection({
-  lang,
   dict,
 }: {
   lang: Locale;
@@ -53,9 +52,9 @@ export function StudioSection({
             </ul>
 
             <div className="mt-12">
-              <ButtonLink href={`/${lang}/reservation`} variant="primary" size="lg">
+              <BookingTrigger category="studio" variant="primary" size="lg">
                 {dict.studio.cta}
-              </ButtonLink>
+              </BookingTrigger>
             </div>
           </div>
         </div>

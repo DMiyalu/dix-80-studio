@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import Link from "next/link";
 import { Container } from "@/src/ui/components/container";
 import { ButtonLink } from "@/src/ui/components/button";
 import { cn } from "@/src/ui/lib/cn";
+import { useAppDispatch } from "@/src/infrastructure/store/hooks";
+import { bookingActions } from "@/src/infrastructure/store/booking-slice";
+import type { BookingCategoryId } from "@/src/core/booking/booking";
 
 export type HeroSlide = {
   category: string;
@@ -18,15 +20,16 @@ export function HeroSlider({
   slides,
   ctaPrimary,
   ctaSecondary,
-  ctaSecondaryHref,
+  ctaSecondaryCategory = "studio",
   intervalMs = 6000,
 }: {
   slides: HeroSlide[];
   ctaPrimary: string;
   ctaSecondary: string;
-  ctaSecondaryHref: string;
+  ctaSecondaryCategory?: BookingCategoryId;
   intervalMs?: number;
 }) {
+  const dispatch = useAppDispatch();
   const [index, setIndex] = useState(0);
   const total = slides.length;
 
@@ -110,12 +113,15 @@ export function HeroSlider({
             <ButtonLink href={current.href} variant="primary" size="lg">
               {ctaPrimary}
             </ButtonLink>
-            <Link
-              href={ctaSecondaryHref}
+            <button
+              type="button"
+              onClick={() =>
+                dispatch(bookingActions.open({ category: ctaSecondaryCategory }))
+              }
               className="inline-flex h-14 items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
             >
               {ctaSecondary}
-            </Link>
+            </button>
           </div>
         </div>
       </Container>

@@ -6,6 +6,8 @@ import { i18n, type Locale } from "@/src/i18n/config";
 import { getDictionary, hasLocale } from "@/src/i18n/get-dictionary";
 import { Header } from "@/src/ui/components/header";
 import { Footer } from "@/src/ui/components/footer";
+import { StoreProvider } from "@/src/infrastructure/store/store-provider";
+import { BookingModal } from "@/src/ui/features/booking-modal/booking-modal";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -47,9 +49,12 @@ export default async function RootLayout({
       className={`${sans.variable} ${display.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <Header lang={lang as Locale} dict={dict} />
-        <main className="flex-1">{children}</main>
-        <Footer lang={lang as Locale} dict={dict} />
+        <StoreProvider>
+          <Header lang={lang as Locale} dict={dict} />
+          <main className="flex-1">{children}</main>
+          <Footer lang={lang as Locale} dict={dict} />
+          <BookingModal lang={lang as Locale} dict={dict} />
+        </StoreProvider>
       </body>
     </html>
   );

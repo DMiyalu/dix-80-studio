@@ -5,38 +5,38 @@
     "studio": "Studio",
     "about": "About",
     "contact": "Contact",
-    "book": "Book now"
+    "book": "Book"
   },
   "hero": {
     "eyebrow": "Photo studio · Trois-Rivières",
     "title_line1": "Capture the moment.",
     "title_line2": "Elevate the image.",
-    "subtitle": "Professional photography for weddings, businesses, sports and events. A fully-equipped studio in the heart of Mauricie.",
-    "cta_primary": "Explore services",
+    "subtitle": "Professional photography for weddings, corporate, sport and events. A fully equipped studio in the heart of Mauricie.",
+    "cta_primary": "View our services",
     "cta_secondary": "Rent the studio",
-    "scroll": "Discover"
+    "scroll": "Scroll"
   },
   "services": {
-    "eyebrow": "What we do",
-    "title": "A photograph for every story",
-    "subtitle": "Tailored shoots, designed to reveal what truly matters.",
+    "eyebrow": "Our specialties",
+    "title": "Photography for every story",
+    "subtitle": "Tailored services designed to reveal what truly matters.",
     "items": {
       "wedding": { "name": "Wedding", "desc": "Emotion, elegance, stolen moments." },
-      "corporate": { "name": "Corporate", "desc": "Brand image and professional portraits." },
-      "sport": { "name": "Sport", "desc": "Intensity frozen at 1/1000s." },
+      "corporate": { "name": "Corporate", "desc": "Brand imagery and pro portraits." },
+      "sport": { "name": "Sport", "desc": "Intensity frozen in a thousandth." },
       "portrait": { "name": "Portrait", "desc": "Studio or outdoor, your best angle." },
-      "event": { "name": "Events", "desc": "Galas, launches, private parties." },
-      "family": { "name": "Family", "desc": "Timeless memories worth sharing." }
+      "event": { "name": "Events", "desc": "Galas, launches, private nights." },
+      "family": { "name": "Family", "desc": "Timeless memories to share." }
     },
     "cta": "All services"
   },
   "studio": {
     "eyebrow": "The space",
-    "title": "Our studio in Trois-Rivières",
-    "desc": "1,200 sq.ft. of modular space bathed in natural light, equipped for any photo or video production.",
+    "title": "Our Trois-Rivières studio",
+    "desc": "1200 sq ft bathed in natural light, equipped for all types of photo and video productions.",
     "features": [
-      "1,200 sq.ft. modular space",
-      "Natural + professional lighting",
+      "1200 sq ft of modular space",
+      "Natural light + pro lighting",
       "White and black cycloramas",
       "Free on-site parking"
     ],
@@ -51,10 +51,10 @@
     "eyebrow": "How it works",
     "title": "Simple, from first contact to delivery",
     "steps": [
-      { "n": "01", "t": "Pick a service", "d": "Browse our offerings and find the right fit." },
-      { "n": "02", "t": "Book a date", "d": "Select a slot directly online." },
-      { "n": "03", "t": "Secure deposit", "d": "Pay by card via Stripe in a few clicks." },
-      { "n": "04", "t": "Shoot & delivery", "d": "We capture, we retouch, you receive your images." }
+      { "n": "01", "t": "Choose a service", "d": "Browse our offerings and find the one that fits." },
+      { "n": "02", "t": "Book a date", "d": "Pick a slot directly online." },
+      { "n": "03", "t": "Secure payment", "d": "Card payment via Stripe, in a few clicks." },
+      { "n": "04", "t": "Session & delivery", "d": "We capture, we retouch, you receive your images." }
     ]
   },
   "testimonials": {
@@ -62,20 +62,20 @@
     "title": "What our clients say",
     "items": [
       { "quote": "A professional, attentive team. Our wedding photos are stunning.", "name": "Sophie & Marc", "role": "Wedding · Trois-Rivières" },
-      { "quote": "Corporate photos delivered fast and flawlessly.", "name": "Julien Tremblay", "role": "Director, Atelier 3R" },
+      { "quote": "Corporate photos delivered quickly and with impeccable quality.", "name": "Julien Tremblay", "role": "Director, Atelier 3R" },
       { "quote": "The studio is gorgeous, perfect for our collection shoot.", "name": "Marie-Ève L.", "role": "Fashion designer" }
     ]
   },
   "about": {
     "eyebrow": "About",
-    "title": "A team passionate about images",
-    "desc": "Based in Trois-Rivières, 80Dix Studio has been capturing your moments for over 10 years, with a sharp eye for light and emotion.",
+    "title": "A team passionate about image",
+    "desc": "Based in Trois-Rivières, 80Dix Studio captures your moments with a sharp eye for light and emotion.",
     "cta": "Our story"
   },
   "cta_final": {
     "title": "Got a project in mind?",
     "subtitle": "Let's talk. We reply within 24 hours.",
-    "button": "Get in touch"
+    "button": "Contact us"
   },
   "footer": {
     "tagline": "Professional photo studio in Trois-Rivières.",
@@ -87,5 +87,92 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "contact": "Contact"
+  },
+  "booking": {
+    "categories": {
+      "studio": { "title": "Rent the studio", "subtitle": "Book the space for your project." }
+    },
+    "steps": {
+      "package": "Package",
+      "datetime": "Date & time",
+      "contact": "Your details"
+    },
+    "step_package": {
+      "title": "Choose your package",
+      "subtitle": "All packages include full access to the studio.",
+      "duration_label": "How many hours?",
+      "popular": "Popular",
+      "per_hour": "$/h",
+      "starting_from": "Starting from"
+    },
+    "step_datetime": {
+      "title": "Choose a date and time",
+      "subtitle": "First pick a day, then a time slot.",
+      "no_slots": "No slots available that day.",
+      "select_date": "Pick a date to see available slots.",
+      "available": "Available",
+      "taken": "Booked",
+      "weekday_short": ["M", "T", "W", "T", "F", "S", "S"],
+      "month_names": [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ]
+    },
+    "step_contact": {
+      "title": "Your details",
+      "subtitle": "We need a few details to confirm your booking.",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "phone_country": "Country",
+      "message": "Message (optional)",
+      "message_placeholder": "Anything specific about your project?",
+      "terms": "I accept the booking terms and refund policy.",
+      "refund_note": "Full payment online. Guaranteed refund for cancellations up to 48 h before the session."
+    },
+    "summary": {
+      "title": "Your booking",
+      "package": "Package",
+      "datetime": "Date & time",
+      "duration": "Duration",
+      "hours_short": "h",
+      "subtotal": "Subtotal",
+      "gst": "GST (5%)",
+      "qst": "QST (9.975%)",
+      "total": "Total",
+      "empty": "Nothing selected."
+    },
+    "actions": {
+      "next": "Next",
+      "back": "Back",
+      "close": "Close",
+      "pay": "Pay & confirm",
+      "submitting": "Processing…"
+    },
+    "errors": {
+      "required": "Required field",
+      "invalid_email": "Invalid email",
+      "invalid_phone": "Invalid number",
+      "must_accept": "You must accept the terms."
+    },
+    "packages": {
+      "studio-2-4h": {
+        "name": "2 to 4 hours",
+        "desc": "Ideal for a short shoot or a product test."
+      },
+      "studio-5h": {
+        "name": "5 hours",
+        "desc": "Our most popular package — best value."
+      },
+      "studio-6-8h": {
+        "name": "6 to 8 hours",
+        "desc": "For longer productions needing more time."
+      },
+      "studio-day": {
+        "name": "Full day",
+        "desc": "14 h non-stop, from 8 am to 10 pm. Best deal."
+      }
+    }
   }
 }
