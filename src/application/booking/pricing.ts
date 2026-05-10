@@ -1,5 +1,6 @@
 import type { Package } from "@/src/core/booking/package";
 import type { PricingBreakdown } from "@/src/core/booking/booking";
+import type { BookingPricingCents } from "@/src/core/booking/persisted-booking";
 
 /** Quebec sales tax rates (applied on subtotal, not compounded). */
 const GST_RATE = 0.05; // TPS
@@ -17,6 +18,27 @@ export function computePricing(pkg: Package, hours: number): PricingBreakdown {
   const qst = round2(subtotal * QST_RATE);
   const total = round2(subtotal + gst + qst);
   return { subtotal: round2(subtotal), gst, qst, total };
+}
+
+/**
+ * Cents-based pricing for persistence/Stripe. **Always** use this on the server
+ * — float dollars are display-only.
+ */
+export function computePricingCents(
+  pkg: Package,
+  hours: number,
+): BookingPricingCents {
+  const subtotalCents = Math.round(computeSubtotal(pkg, hours) * 100);
+  const gstCents = Math.round(subtotalCents * GST_RATE);
+  const qstCents = Math.round(subtotalCents * QST_RATE);
+  const totalCents = subtotalCents + gstCents + qstCents;
+  return {
+    currency: "CAD",
+    subtotalCents,
+    gstCents,
+    qstCents,
+    totalCents,
+  };
 }
 
 function round2(n: number): number {

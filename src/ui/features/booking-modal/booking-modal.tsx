@@ -14,6 +14,7 @@ import { StepPackage } from "./steps/step-package";
 import { StepDateTime } from "./steps/step-datetime";
 import { StepContact } from "./steps/step-contact";
 import { contactSchema } from "@/src/application/booking/contact-validation";
+import { submitBooking } from "@/src/application/booking/actions";
 
 /**
  * Orchestrator for the booking flow. Renders the modal shell and the
@@ -54,17 +55,50 @@ export function BookingModal({ lang, dict }: { lang: Locale; dict: Dictionary })
     } else if (state.step === "contact") {
       const parsed = contactSchema.safeParse(state.contact);
       if (!parsed.success) return; // step component shows errors
+      if (!state.category || !state.packageId || !state.durationHours || !state.date || !state.time) {
+        return;
+      }
       dispatch(bookingActions.setStatus({ status: "submitting" }));
-      // TODO: backend integration (Firestore booking + Stripe Checkout).
-      // For now, simulate a redirect with a small delay.
-      setTimeout(() => {
-        dispatch(bookingActions.setStatus({ status: "success" }));
-        // eslint-disable-next-line no-alert
-        alert(
-          "Démo : la réservation serait créée et l'utilisateur redirigé vers Stripe Checkout.",
-        );
-        dispatch(bookingActions.close());
-      }, 600);
+      void submitBooking({
+        category: state.category,
+        packageId: state.packageId,
+        durationHours: state.durationHours,
+        date: state.date,
+        time: state.time,
+        contact: state.contact,
+      }).then((result) => {
+        if (result.ok) {
+          dispatch(bookingActions.setStatus({ status: "success" }));
+          // TODO: redirect to Stripe Checkout (next step).
+          // eslint-disable-next-line no-alert
+          alert(
+            `Réservation créée (id: ${result.bookingId}). Le paiement Stripe sera branché à l'étape suivante.`,
+          );
+          dispatch(bookingActions.close());
+        } else if (result.error === "slot_conflict") {
+          dispatch(
+            bookingActions.setStatus({
+              status: "error",
+              errorMessage: "Ce créneau vient d'être réservé. Choisis un autre horaire.",
+            }),
+          );
+          dispatch(bookingActions.goTo("datetime"));
+        } else if (result.error === "validation") {
+          dispatch(
+            bookingActions.setStatus({
+              status: "error",
+              errorMessage: "Données invalides : " + JSON.stringify(result.fieldErrors),
+            }),
+          );
+        } else {
+          dispatch(
+            bookingActions.setStatus({
+              status: "error",
+              errorMessage: "Une erreur interne est survenue. Réessaie plus tard.",
+            }),
+          );
+        }
+      });
     }
   };
 
