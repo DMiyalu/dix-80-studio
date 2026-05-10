@@ -31,7 +31,7 @@ export function CtaFinalSection({
           {dict.cta_final.subtitle}
         </p>
         <div className="mt-10 flex justify-center">
-          <ButtonLink href="mailto:contact@80dix.com" variant="primary" size="lg">
+          <ButtonLink href="mailto:petermiyalu22@gmail.com" variant="primary" size="lg">
             {dict.cta_final.button}
           </ButtonLink>
         </div>

@@ -6,6 +6,7 @@ import { i18n, type Locale } from "@/src/i18n/config";
 import { getDictionary, hasLocale } from "@/src/i18n/get-dictionary";
 import { Header } from "@/src/ui/components/header";
 import { Footer } from "@/src/ui/components/footer";
+import { ScrollToTop } from "@/src/ui/components/scroll-to-top";
 import { StoreProvider } from "@/src/infrastructure/store/store-provider";
 import { BookingModal } from "@/src/ui/features/booking-modal/booking-modal";
 
@@ -54,6 +55,7 @@ export default async function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer lang={lang as Locale} dict={dict} />
           <BookingModal lang={lang as Locale} dict={dict} />
+          <ScrollToTop label={dict.hero.scroll} />
         </StoreProvider>
       </body>
     </html>

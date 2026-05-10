@@ -57,7 +57,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {dict.footer.contact}
             </h4>
             <ul className="space-y-3 text-sm text-muted">
-              <li><a href="mailto:contact@dix80studio.com" className="hover:text-accent">contact@dix80studio.com</a></li>
+              <li><a href="mailto:petermiyalu22@gmail.com" className="hover:text-accent">petermiyalu22@gmail.com</a></li>
               <li><a href="tel:+18190000000" className="hover:text-accent">+1 (873) 993-1612</a></li>
             </ul>
             <SocialIcons
@@ -69,27 +69,25 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-border pt-8 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} 80Dix Studio. {dict.footer.rights}</p>
+          <p>
+            © {year} Dix80Studio. {dict.footer.rights} ·{" "}
+            <span className="text-muted/80">
+              {dict.footer.developed_by}{" "}
+              <a
+                href="https://x-ra.solutions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-foreground/80 transition-colors hover:text-accent"
+              >
+                X-RA Solutions
+              </a>
+            </span>
+          </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-foreground">{dict.footer.privacy}</Link>
             <Link href="#" className="hover:text-foreground">{dict.footer.terms}</Link>
             <LangSwitcher current={lang} />
           </div>
-        </div>
-
-        {/* Agency signature */}
-        <div className="mt-6 flex justify-center border-t border-border/60 pt-6 text-[11px] uppercase tracking-[0.25em] text-muted/70">
-          <span>
-            Crafted by{" "}
-            <a
-              href="https://x-ra.solutions"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-foreground/80 transition-colors hover:text-accent"
-            >
-              X-Ra Solutions
-            </a>
-          </span>
         </div>
       </Container>
     </footer>
