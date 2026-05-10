@@ -91,12 +91,25 @@
   },
   "booking": {
     "categories": {
-      "studio": { "title": "Rent the studio", "subtitle": "Book the space for your project." }
+      "studio": { "title": "Rent the studio", "subtitle": "Book the space for your project." },
+      "wedding": { "title": "Wedding photography", "subtitle": "Book your wedding session." },
+      "portrait": { "title": "Portrait session", "subtitle": "Book your portrait session." },
+      "corporate": { "title": "Corporate photography", "subtitle": "Book your corporate session." },
+      "sport": { "title": "Sport photography", "subtitle": "Book your sport coverage." },
+      "event": { "title": "Event coverage", "subtitle": "Book the coverage of your event." },
+      "family": { "title": "Family session", "subtitle": "Book your family session." }
     },
     "steps": {
+      "category": "Category",
       "package": "Package",
       "datetime": "Date & time",
       "contact": "Your details"
+    },
+    "step_category": {
+      "title": "What would you like to book?",
+      "subtitle": "Select the service you're interested in to continue.",
+      "coming_soon": "Online booking coming soon",
+      "contact_cta": "Contact us"
     },
     "step_package": {
       "title": "Choose your package",

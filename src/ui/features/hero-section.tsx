@@ -68,7 +68,6 @@ export function HeroSection({
     <HeroSlider
       slides={slides}
       ctaPrimary={dict.hero.cta_primary}
-      ctaCategory="studio"
     />
   );
 }

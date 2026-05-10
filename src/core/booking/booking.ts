@@ -4,7 +4,7 @@ import type { Package } from "./package";
 export type BookingCategoryId = "studio" | string;
 
 /** Workflow step inside the booking modal. */
-export type BookingStep = "package" | "datetime" | "contact";
+export type BookingStep = "category" | "package" | "datetime" | "contact";
 
 export interface ContactInfo {
   firstName: string;

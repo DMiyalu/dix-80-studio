@@ -91,12 +91,25 @@
   },
   "booking": {
     "categories": {
-      "studio": { "title": "Louer le studio", "subtitle": "Réservez l'espace pour votre projet." }
+      "studio": { "title": "Louer le studio", "subtitle": "Réservez l'espace pour votre projet." },
+      "wedding": { "title": "Photographie mariage", "subtitle": "Réservez votre séance mariage." },
+      "portrait": { "title": "Séance portrait", "subtitle": "Réservez votre séance portrait." },
+      "corporate": { "title": "Photographie corporative", "subtitle": "Réservez votre séance corporate." },
+      "sport": { "title": "Photographie sport", "subtitle": "Réservez votre couverture sportive." },
+      "event": { "title": "Événementiel", "subtitle": "Réservez la couverture de votre événement." },
+      "family": { "title": "Séance famille", "subtitle": "Réservez votre séance famille." }
     },
     "steps": {
+      "category": "Catégorie",
       "package": "Forfait",
       "datetime": "Date & heure",
       "contact": "Vos coordonnées"
+    },
+    "step_category": {
+      "title": "Que souhaitez-vous réserver ?",
+      "subtitle": "Sélectionnez le service qui vous intéresse pour continuer.",
+      "coming_soon": "Bientôt réservable en ligne",
+      "contact_cta": "Nous contacter"
     },
     "step_package": {
       "title": "Choisissez votre forfait",

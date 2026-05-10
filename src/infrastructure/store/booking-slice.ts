@@ -8,6 +8,12 @@ import type {
 export interface BookingState {
   isOpen: boolean;
   category: BookingCategoryId | null;
+  /**
+   * When true, the flow includes the initial category-selection step
+   * (modal opened from the generic "Réserver maintenant" trigger).
+   * When false, a category was preselected (e.g. "Réserver le studio").
+   */
+  requiresCategoryStep: boolean;
   step: BookingStep;
   packageId: string | null;
   durationHours: number | null;
@@ -31,6 +37,7 @@ const emptyContact: ContactInfo = {
 const initialState: BookingState = {
   isOpen: false,
   category: null,
+  requiresCategoryStep: false,
   step: "package",
   packageId: null,
   durationHours: null,
@@ -45,10 +52,20 @@ const slice = createSlice({
   name: "booking",
   initialState,
   reducers: {
+    /** Open with a preselected category (skips the category step). */
     open(state, action: PayloadAction<{ category: BookingCategoryId }>) {
       Object.assign(state, initialState);
       state.isOpen = true;
       state.category = action.payload.category;
+      state.requiresCategoryStep = false;
+      state.step = "package";
+    },
+    /** Open the selector flow: user picks the category first. */
+    openSelector(state) {
+      Object.assign(state, initialState);
+      state.isOpen = true;
+      state.requiresCategoryStep = true;
+      state.step = "category";
     },
     close(state) {
       state.isOpen = false;
@@ -59,21 +76,25 @@ const slice = createSlice({
     goTo(state, action: PayloadAction<BookingStep>) {
       state.step = action.payload;
     },
+    selectCategory(state, action: PayloadAction<BookingCategoryId>) {
+      // Switching categories invalidates downstream choices.
+      state.category = action.payload;
+      state.packageId = null;
+      state.durationHours = null;
+      state.date = null;
+      state.time = null;
+      state.step = "package";
+    },
     next(state) {
-      state.step =
-        state.step === "package"
-          ? "datetime"
-          : state.step === "datetime"
-            ? "contact"
-            : "contact";
+      if (state.step === "category") state.step = "package";
+      else if (state.step === "package") state.step = "datetime";
+      else if (state.step === "datetime") state.step = "contact";
     },
     back(state) {
-      state.step =
-        state.step === "contact"
-          ? "datetime"
-          : state.step === "datetime"
-            ? "package"
-            : "package";
+      if (state.step === "contact") state.step = "datetime";
+      else if (state.step === "datetime") state.step = "package";
+      else if (state.step === "package" && state.requiresCategoryStep)
+        state.step = "category";
     },
     selectPackage(
       state,
