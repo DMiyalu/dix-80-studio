@@ -3,10 +3,12 @@
 import {
   useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 import {
   AsYouType,
   getCountries,
@@ -46,8 +48,11 @@ export function PhoneInput({
   lang: string;
 }) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const popoverRef = useRef<HTMLDivElement | null>(null);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [pos, setPos] = useState<{ top: number; left: number; width: number } | null>(null);
   const listboxId = useId();
 
   const countries = useMemo(() => buildCountries(lang), [lang]);
@@ -66,9 +71,12 @@ export function PhoneInput({
   useEffect(() => {
     if (!open) return;
     const onDoc = (e: MouseEvent) => {
+      const t = e.target as Node;
       if (
         wrapperRef.current &&
-        !wrapperRef.current.contains(e.target as Node)
+        !wrapperRef.current.contains(t) &&
+        popoverRef.current &&
+        !popoverRef.current.contains(t)
       ) {
         setOpen(false);
       }
@@ -81,6 +89,26 @@ export function PhoneInput({
     return () => {
       document.removeEventListener("mousedown", onDoc);
       document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // Position popover under trigger (fixed → escapes modal overflow).
+  useLayoutEffect(() => {
+    if (!open || !triggerRef.current) return;
+    const update = () => {
+      const r = triggerRef.current!.getBoundingClientRect();
+      setPos({
+        top: r.bottom + 4,
+        left: r.left,
+        width: Math.max(r.width, 288),
+      });
+    };
+    update();
+    window.addEventListener("resize", update);
+    window.addEventListener("scroll", update, true);
+    return () => {
+      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", update, true);
     };
   }, [open]);
 
@@ -112,12 +140,13 @@ export function PhoneInput({
       >
         {/* Country trigger */}
         <button
+          ref={triggerRef}
           type="button"
           aria-haspopup="listbox"
           aria-expanded={open}
           aria-label={countryLabel}
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-none items-center gap-2 border-r border-border bg-surface px-3 text-sm transition-colors hover:bg-border/60"
+          className="flex flex-none cursor-pointer items-center gap-2 border-r border-border bg-surface px-3 text-sm transition-colors hover:bg-border/60"
         >
           <FlagIcon code={current.code} />
           <span className="font-medium text-foreground">+{current.dial}</span>
@@ -137,14 +166,23 @@ export function PhoneInput({
           placeholder={placeholder(current.code)}
           className="flex-1 bg-transparent px-3 py-2.5 text-sm text-foreground focus:outline-none"
         />
+      </div>
 
-        {/* Dropdown panel */}
-        {open && (
+      {/* Dropdown panel — portal-rendered so it escapes modal overflow */}
+      {open && pos && typeof document !== "undefined" &&
+        createPortal(
           <div
+            ref={popoverRef}
             role="listbox"
             id={listboxId}
             aria-label={countryLabel}
-            className="absolute left-0 top-full z-50 mt-1 flex max-h-72 w-72 flex-col overflow-hidden rounded-lg border border-border bg-background shadow-xl"
+            style={{
+              position: "fixed",
+              top: pos.top,
+              left: pos.left,
+              width: pos.width,
+            }}
+            className="z-[200] flex max-h-72 flex-col overflow-hidden rounded-lg border border-border bg-background shadow-xl"
           >
             <div className="border-b border-border p-2">
               <input
@@ -167,7 +205,7 @@ export function PhoneInput({
                       aria-selected={selected}
                       onClick={() => selectCountry(c.code)}
                       className={cn(
-                        "flex w-full items-center gap-3 px-3 py-2 text-left text-sm transition-colors",
+                        "flex w-full cursor-pointer items-center gap-3 px-3 py-2 text-left text-sm transition-colors",
                         selected
                           ? "bg-accent/10 text-foreground"
                           : "text-foreground hover:bg-surface",
@@ -184,9 +222,9 @@ export function PhoneInput({
                 <li className="px-3 py-4 text-center text-sm text-muted">—</li>
               )}
             </ul>
-          </div>
+          </div>,
+          document.body,
         )}
-      </div>
 
       {invalid && errorText && (
         <span className="mt-1 block text-xs text-accent">{errorText}</span>

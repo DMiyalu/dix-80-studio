@@ -118,7 +118,7 @@ export function HeroSlider({
               onClick={() =>
                 dispatch(bookingActions.open({ category: ctaSecondaryCategory }))
               }
-              className="inline-flex h-14 items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
+              className="inline-flex h-14 cursor-pointer items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
             >
               {ctaSecondary}
             </button>
