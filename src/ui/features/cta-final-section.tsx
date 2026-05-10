@@ -7,14 +7,13 @@ const PLACEHOLDER =
   "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2400&q=80";
 
 export function CtaFinalSection({
-  lang,
   dict,
 }: {
   lang: Locale;
   dict: Dictionary;
 }) {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section id="contact" className="relative isolate scroll-mt-28 overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-cover bg-center"
@@ -32,7 +31,7 @@ export function CtaFinalSection({
           {dict.cta_final.subtitle}
         </p>
         <div className="mt-10 flex justify-center">
-          <ButtonLink href={`/${lang}/contact`} variant="primary" size="lg">
+          <ButtonLink href="mailto:contact@80dix.com" variant="primary" size="lg">
             {dict.cta_final.button}
           </ButtonLink>
         </div>

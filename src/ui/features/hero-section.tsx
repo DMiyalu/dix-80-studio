@@ -68,8 +68,7 @@ export function HeroSection({
     <HeroSlider
       slides={slides}
       ctaPrimary={dict.hero.cta_primary}
-      ctaSecondary={dict.hero.cta_secondary}
-      ctaSecondaryCategory="studio"
+      ctaCategory="studio"
     />
   );
 }

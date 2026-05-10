@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { Container } from "@/src/ui/components/container";
-import { ButtonLink } from "@/src/ui/components/button";
 import { cn } from "@/src/ui/lib/cn";
 import { useAppDispatch } from "@/src/infrastructure/store/hooks";
 import { bookingActions } from "@/src/infrastructure/store/booking-slice";
@@ -19,14 +18,12 @@ export type HeroSlide = {
 export function HeroSlider({
   slides,
   ctaPrimary,
-  ctaSecondary,
-  ctaSecondaryCategory = "studio",
+  ctaCategory = "studio",
   intervalMs = 6000,
 }: {
   slides: HeroSlide[];
   ctaPrimary: string;
-  ctaSecondary: string;
-  ctaSecondaryCategory?: BookingCategoryId;
+  ctaCategory?: BookingCategoryId;
   intervalMs?: number;
 }) {
   const dispatch = useAppDispatch();
@@ -110,17 +107,14 @@ export function HeroSlider({
             {current.subtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <ButtonLink href={current.href} variant="primary" size="lg">
-              {ctaPrimary}
-            </ButtonLink>
             <button
               type="button"
               onClick={() =>
-                dispatch(bookingActions.open({ category: ctaSecondaryCategory }))
+                dispatch(bookingActions.open({ category: ctaCategory }))
               }
-              className="inline-flex h-14 cursor-pointer items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
+              className="inline-flex h-14 cursor-pointer items-center justify-center rounded-full bg-accent px-9 text-sm font-medium uppercase tracking-wide text-white shadow-sm transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/40"
             >
-              {ctaSecondary}
+              {ctaPrimary}
             </button>
           </div>
         </div>

@@ -3,7 +3,6 @@ import type { Dictionary } from "@/src/i18n/get-dictionary";
 import { Container } from "@/src/ui/components/container";
 import { SectionHeader } from "@/src/ui/components/section-header";
 import { ServiceCard } from "@/src/ui/components/service-card";
-import { ButtonLink } from "@/src/ui/components/button";
 
 const ITEMS: Array<{ key: keyof Dictionary["services"]["items"]; img: string }> = [
   { key: "wedding",   img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" },
@@ -23,7 +22,7 @@ export function ServicesSection({
 }) {
   const base = `/${lang}`;
   return (
-    <section className="bg-background py-24 lg:py-32">
+    <section id="services" className="scroll-mt-28 bg-background py-24 lg:py-32">
       <Container>
         <SectionHeader
           eyebrow={dict.services.eyebrow}
@@ -44,12 +43,6 @@ export function ServicesSection({
               />
             );
           })}
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <ButtonLink href={`${base}/services`} variant="secondary" size="md">
-            {dict.services.cta}
-          </ButtonLink>
         </div>
       </Container>
     </section>

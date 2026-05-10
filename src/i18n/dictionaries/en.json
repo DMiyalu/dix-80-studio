@@ -2,18 +2,18 @@
   "nav": {
     "home": "Home",
     "services": "Services",
-    "studio": "Studio",
+    "studio": "The Studio",
     "about": "About",
     "contact": "Contact",
-    "book": "Book"
+    "book": "Contact us"
   },
   "hero": {
     "eyebrow": "Photo studio · Trois-Rivières",
     "title_line1": "Capture the moment.",
     "title_line2": "Elevate the image.",
     "subtitle": "Professional photography for weddings, corporate, sport and events. A fully equipped studio in the heart of Mauricie.",
-    "cta_primary": "View our services",
-    "cta_secondary": "Rent the studio",
+    "cta_primary": "Book now",
+    "cta_secondary": "",
     "scroll": "Scroll"
   },
   "services": {

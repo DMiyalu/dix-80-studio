@@ -21,8 +21,8 @@ export function Header({
   const base = `/${lang}`;
   const links = [
     { href: base, label: dict.nav.home },
-    { href: `${base}/services`, label: dict.nav.services },
-    { href: `${base}/contact`, label: dict.nav.contact },
+    { href: `${base}#services`, label: dict.nav.services },
+    { href: `${base}#studio`, label: dict.nav.studio },
   ];
 
   // --- Sticky with scroll-up reveal ---------------------------------------
@@ -129,7 +129,7 @@ export function Header({
             className={cn(onLight ? "text-foreground" : "text-white", navHover)}
           />
           <ButtonLink
-            href={`${base}/reservation`}
+            href={`${base}#contact`}
             variant="primary"
             size="md"
             className="hidden sm:inline-flex"

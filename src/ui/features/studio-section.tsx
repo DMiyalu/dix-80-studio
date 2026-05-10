@@ -14,7 +14,7 @@ export function StudioSection({
   dict: Dictionary;
 }) {
   return (
-    <section className="bg-surface py-24 lg:py-32">
+    <section id="studio" className="scroll-mt-28 bg-surface py-24 lg:py-32">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
