@@ -126,6 +126,7 @@
       "email": "Email",
       "phone": "Phone",
       "phone_country": "Country",
+      "phone_search": "Search a country…",
       "message": "Message (optional)",
       "message_placeholder": "Anything specific about your project?",
       "terms": "I accept the booking terms and refund policy.",

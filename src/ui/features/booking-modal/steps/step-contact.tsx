@@ -11,8 +11,9 @@ import {
 import { PhoneInput } from "../phone-input";
 import { cn } from "@/src/ui/lib/cn";
 import type { Dictionary } from "@/src/i18n/get-dictionary";
+import type { Locale } from "@/src/i18n/config";
 
-export function StepContact({ dict }: { dict: Dictionary }) {
+export function StepContact({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const t = dict.booking.step_contact;
   const errs = dict.booking.errors;
   const dispatch = useAppDispatch();
@@ -81,6 +82,8 @@ export function StepContact({ dict }: { dict: Dictionary }) {
         errorText={errLabel("phone")}
         label={t.phone}
         countryLabel={t.phone_country}
+        searchPlaceholder={t.phone_search}
+        lang={lang}
         onChange={(next) =>
           dispatch(bookingActions.updateContact(next))
         }

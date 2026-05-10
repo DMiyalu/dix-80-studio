@@ -23,11 +23,24 @@ function round2(n: number): number {
   return Math.round(n * 100) / 100;
 }
 
-/** Locale-aware currency formatter (CAD). */
+/**
+ * Locale-aware currency formatter.
+ * Always shows the explicit "CAD" / "$ CA" marker so the currency is
+ * unambiguous (Canadian dollars, not USD).
+ */
 export function formatCAD(amount: number, locale: string): string {
-  return new Intl.NumberFormat(locale === "fr" ? "fr-CA" : "en-CA", {
+  if (locale === "fr") {
+    const n = new Intl.NumberFormat("fr-CA", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(amount);
+    return `${n} $ CA`;
+  }
+  // en-US locale forces the "CA$" prefix even for CAD.
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "CAD",
+    currencyDisplay: "symbol",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(amount);

@@ -113,7 +113,7 @@ export function BookingModal({ lang, dict }: { lang: Locale; dict: Dictionary })
         <div className="overflow-y-auto px-6 py-8 sm:px-8">
           {state.step === "package" && <StepPackage dict={dict} />}
           {state.step === "datetime" && <StepDateTime dict={dict} />}
-          {state.step === "contact" && <StepContact dict={dict} />}
+          {state.step === "contact" && <StepContact dict={dict} lang={lang} />}
         </div>
         <aside className="hidden border-l border-border bg-surface lg:block">
           <BookingSummary lang={lang} dict={dict} />
