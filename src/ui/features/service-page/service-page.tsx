@@ -37,6 +37,7 @@ export function ServicePage({
         common={common}
         imageUrl={details.heroImage}
         backHref={`/${lang}#services`}
+        categoryId={details.id}
       />
       <Reveal>
         <ServiceIntro content={content} imageUrl={details.introImage} />

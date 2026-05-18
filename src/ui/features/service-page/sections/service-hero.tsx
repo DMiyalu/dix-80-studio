@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/src/ui/components/container";
+import { BookingTrigger } from "@/src/ui/features/booking-modal/booking-trigger";
+import type { BookingCategoryId } from "@/src/core/booking/booking";
 import type { ServicePageCommon, ServicePageContent } from "../service-page-content";
 
 export function ServiceHero({
@@ -8,11 +10,13 @@ export function ServiceHero({
   common,
   imageUrl,
   backHref,
+  categoryId,
 }: {
   content: ServicePageContent;
   common: ServicePageCommon;
   imageUrl: string;
   backHref: string;
+  categoryId: BookingCategoryId;
 }) {
   return (
     <section className="relative isolate min-h-[70vh] overflow-hidden">
@@ -46,6 +50,11 @@ export function ServiceHero({
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
             {content.hero.subtitle}
           </p>
+          <div className="mt-10">
+            <BookingTrigger category={categoryId} variant="primary" size="lg">
+              {common.book_now}
+            </BookingTrigger>
+          </div>
         </div>
       </Container>
     </section>

@@ -33,12 +33,15 @@ export function generateSlotsForDate(
   durationHours: number,
 ): SlotOption[] {
   const taken = mockTakenForDate(dateISO);
+  // Slots are generated in 1-hour increments; sub-hour packages still occupy
+  // the full starting hour for availability purposes.
+  const blockSize = Math.max(1, Math.ceil(durationHours));
   const slots: SlotOption[] = [];
-  for (let h = OPEN_HOUR; h + durationHours <= CLOSE_HOUR; h++) {
+  for (let h = OPEN_HOUR; h + blockSize <= CLOSE_HOUR; h++) {
     const time = `${String(h).padStart(2, "0")}:00`;
     let available = !taken.has(time);
     // Block start if any hour inside the requested window is taken.
-    for (let k = 1; k < durationHours && available; k++) {
+    for (let k = 1; k < blockSize && available; k++) {
       const t = `${String(h + k).padStart(2, "0")}:00`;
       if (taken.has(t)) available = false;
     }
@@ -58,7 +61,9 @@ function isPast(dateISO: string, time: string): boolean {
 
 /** Compute the end time of a slot. */
 export function endTime(start: string, durationHours: number): string {
-  const [hh] = start.split(":").map(Number);
-  const end = hh + durationHours;
-  return `${String(end).padStart(2, "0")}:00`;
+  const [hh, mm] = start.split(":").map(Number);
+  const totalMin = hh * 60 + mm + Math.round(durationHours * 60);
+  const endH = Math.floor(totalMin / 60) % 24;
+  const endM = totalMin % 60;
+  return `${String(endH).padStart(2, "0")}:${String(endM).padStart(2, "0")}`;
 }

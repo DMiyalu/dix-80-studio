@@ -22,9 +22,11 @@
     "subtitle": "Tailored services designed to reveal what truly matters.",
     "items": {
       "wedding": { "name": "Wedding", "desc": "Emotion, elegance, stolen moments." },
+      "portrait": { "name": "Studio portrait", "desc": "Studio or outdoor, your best angle." },
+      "anniversaire": { "name": "Birthday", "desc": "A festive session to celebrate another year." },
+      "grad_series": { "name": "The Grad Series", "desc": "Polished, timeless graduation portraits." },
       "corporate": { "name": "Corporate", "desc": "Brand imagery and pro portraits." },
       "sport": { "name": "Sport", "desc": "Intensity frozen in a thousandth." },
-      "portrait": { "name": "Portrait", "desc": "Studio or outdoor, your best angle." },
       "event": { "name": "Events", "desc": "Galas, launches, private nights." },
       "family": { "name": "Family", "desc": "Timeless memories to share." }
     },
@@ -93,7 +95,9 @@
     "categories": {
       "studio": { "title": "Rent the studio", "subtitle": "Book the space for your project." },
       "wedding": { "title": "Wedding photography", "subtitle": "Book your wedding session." },
-      "portrait": { "title": "Portrait session", "subtitle": "Book your portrait session." },
+      "portrait": { "title": "Studio portrait", "subtitle": "Book your portrait session." },
+      "anniversaire": { "title": "Birthday session", "subtitle": "Book your birthday session." },
+      "grad_series": { "title": "The Grad Series", "subtitle": "Book your graduation session." },
       "corporate": { "title": "Corporate photography", "subtitle": "Book your corporate session." },
       "sport": { "title": "Sport photography", "subtitle": "Book your sport coverage." },
       "event": { "title": "Event coverage", "subtitle": "Book the coverage of your event." },
@@ -187,6 +191,54 @@
       "studio-day": {
         "name": "Full day",
         "desc": "14 h non-stop, from 8 am to 10 pm. Best deal."
+      },
+      "wedding-ceremonie": {
+        "name": "Ceremony",
+        "desc": "2 hours of coverage · 70 edited photos · private gallery · delivered within 10 days."
+      },
+      "wedding-reception": {
+        "name": "Reception",
+        "desc": "4 hours of service · 170 edited photos · private gallery · delivered within 10 days."
+      },
+      "wedding-complet": {
+        "name": "Full package",
+        "desc": "8 hours — prep, ceremony and reception · 350 photos · 20-page photo book included."
+      },
+      "wedding-absolu": {
+        "name": "Full absolute",
+        "desc": "10 hours · 450 photos · photo setup · 20-page photo book included."
+      },
+      "portrait-essentiel": {
+        "name": "Essential",
+        "desc": "45 minutes in studio · 5 edited high-resolution photos."
+      },
+      "portrait-integrale": {
+        "name": "Integral",
+        "desc": "1 hour in studio · 10 edited high-resolution photos."
+      },
+      "portrait-absolu": {
+        "name": "Absolute",
+        "desc": "1 h 30 in studio · 15 edited high-resolution photos."
+      },
+      "anniversaire-essentiel": {
+        "name": "Essential",
+        "desc": "45 minutes in studio · 5 edited photos of your celebration."
+      },
+      "anniversaire-absolu": {
+        "name": "Absolute",
+        "desc": "1 h 30 in studio · 15 edited photos to capture the party."
+      },
+      "grad-one": {
+        "name": "Grad One",
+        "desc": "45 minutes · 5 edited high-resolution portraits."
+      },
+      "grad-two": {
+        "name": "Grad Two",
+        "desc": "1 hour · 10 edited high-resolution portraits."
+      },
+      "grad-three": {
+        "name": "Grad Three",
+        "desc": "1 h 30 · 15 edited high-resolution portraits."
       }
     }
   },
@@ -513,6 +565,112 @@
         "title": "Book your family session",
         "subtitle": "A moment for you, a memory for ever.",
         "button": "Contact us"
+      }
+    },
+    "anniversaire": {
+      "hero": {
+        "eyebrow": "Birthday",
+        "title": "Celebrate another year, in images",
+        "subtitle": "A short, festive studio session to capture your birthday — solo, as a couple, with family or friends."
+      },
+      "intro": {
+        "title": "A party, with images you'll still love in 10 years",
+        "paragraphs": [
+          "Whether it's a first birthday, turning 30 or 70, we set the mood with you: decor, props, lighting. You show up, we handle the rest.",
+          "Our approach stays light and joyful: we capture real smiles, laughter and looks between loved ones."
+        ]
+      },
+      "features": {
+        "title": "What's included",
+        "items": [
+          { "title": "Fully equipped studio", "desc": "Cycloramas, pro lighting, varied backdrops." },
+          { "title": "Festive decor", "desc": "Balloons, confetti, props on request." },
+          { "title": "Edited photos", "desc": "5 to 15 high-resolution images delivered." },
+          { "title": "Private gallery", "desc": "Secure link to share with your guests." },
+          { "title": "Relaxed vibe", "desc": "Room for the party, not for stiff posing." },
+          { "title": "Fast delivery", "desc": "Your photos within 7 days." }
+        ]
+      },
+      "gallery": {
+        "title": "A few birthdays captured",
+        "subtitle": "All ages, all vibes."
+      },
+      "pricing": {
+        "eyebrow": "Packages",
+        "title": "Pick your package",
+        "subtitle": "Online booking, secure payment.",
+        "unavailable_title": "Custom quote",
+        "unavailable_desc": "Contact us for a tailored package."
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          { "q": "How many people can join?", "a": "Up to 10 people fit comfortably in the studio. Beyond that, let's chat." },
+          { "q": "Can I bring my own props?", "a": "Absolutely — bring anything that makes your party unique." },
+          { "q": "Is it suitable for kids?", "a": "Yes, we adapt our approach and vibe to the age of your guests." },
+          { "q": "When do we receive the photos?", "a": "Private gallery delivered within 7 days of the session." }
+        ]
+      },
+      "related": {
+        "title": "You might also like"
+      },
+      "cta": {
+        "title": "Ready to celebrate?",
+        "subtitle": "Book your slot directly online.",
+        "button": "Book now"
+      }
+    },
+    "grad-series": {
+      "hero": {
+        "eyebrow": "The Grad Series",
+        "title": "Your graduation portraits, your way",
+        "subtitle": "A studio session designed for grads — gown, diploma, or just you: we capture this moment that won't come back."
+      },
+      "intro": {
+        "title": "Graduation is a milestone — it deserves its portraits",
+        "paragraphs": [
+          "High school, college, university: every path deserves to be celebrated. Our approach is modern and bright, far from the classic school portrait.",
+          "Prep email sent before the session, style and posing tips, relaxed vibe — your only job: enjoy."
+        ]
+      },
+      "features": {
+        "title": "What's included",
+        "items": [
+          { "title": "Fully equipped studio", "desc": "Cycloramas, colored backdrops, pro lighting." },
+          { "title": "Multiple outfits", "desc": "Bring 2 or 3 looks, we vary the moods." },
+          { "title": "Posing guidance", "desc": "We guide you so it stays natural." },
+          { "title": "Edited photos", "desc": "5 to 15 high-resolution portraits delivered." },
+          { "title": "Online gallery", "desc": "Share with family in one click." },
+          { "title": "Fast delivery", "desc": "Your portraits within 7 days." }
+        ]
+      },
+      "gallery": {
+        "title": "Recent grad portraits",
+        "subtitle": "Studio, natural light, varied looks."
+      },
+      "pricing": {
+        "eyebrow": "Packages",
+        "title": "Three formats, one standard",
+        "subtitle": "Online booking, secure payment.",
+        "unavailable_title": "Custom quote",
+        "unavailable_desc": "Contact us for a tailored package."
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          { "q": "Should I bring my gown?", "a": "If you have one, yes — otherwise we work with what you're wearing." },
+          { "q": "Can I bring a friend?", "a": "Of course, a friend often helps you relax in front of the lens." },
+          { "q": "Any group rate for my class?", "a": "Yes, contact us for a group rate (several people same day)." },
+          { "q": "When do we receive the photos?", "a": "Private gallery delivered within 7 days of the session." }
+        ]
+      },
+      "related": {
+        "title": "See also"
+      },
+      "cta": {
+        "title": "Book your Grad Series",
+        "subtitle": "Three formats for every budget.",
+        "button": "Book now"
       }
     }
   }

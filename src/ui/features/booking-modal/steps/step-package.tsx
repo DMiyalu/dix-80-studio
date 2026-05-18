@@ -5,7 +5,7 @@ import { bookingActions } from "@/src/infrastructure/store/booking-slice";
 import {
   defaultDuration,
   findPackageById,
-} from "@/src/application/booking/studio-packages";
+} from "@/src/application/booking/packages-registry";
 import {
   findCategory,
   getPackagesForCategory,

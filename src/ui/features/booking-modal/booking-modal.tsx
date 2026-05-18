@@ -2,7 +2,7 @@
 
 import { useAppDispatch, useAppSelector } from "@/src/infrastructure/store/hooks";
 import { bookingActions } from "@/src/infrastructure/store/booking-slice";
-import { findPackageById } from "@/src/application/booking/studio-packages";
+import { findPackageById } from "@/src/application/booking/packages-registry";
 import { Modal } from "@/src/ui/components/modal";
 import { Stepper } from "@/src/ui/components/stepper";
 import { Button } from "@/src/ui/components/button";

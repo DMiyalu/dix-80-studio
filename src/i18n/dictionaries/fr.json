@@ -22,9 +22,11 @@
     "subtitle": "Des prestations sur mesure, pensées pour révéler ce qui compte vraiment.",
     "items": {
       "wedding": { "name": "Mariage", "desc": "Émotion, élégance, instants volés." },
+      "portrait": { "name": "Portrait studio", "desc": "Studio ou extérieur, votre meilleur angle." },
+      "anniversaire": { "name": "Anniversaire", "desc": "Une séance festive pour célébrer une autre année." },
+      "grad_series": { "name": "The Grad Series", "desc": "Vos portraits de finissant·e, soignés et intemporels." },
       "corporate": { "name": "Corporate", "desc": "Image de marque et portraits pros." },
       "sport": { "name": "Sport", "desc": "L'intensité figée au millième." },
-      "portrait": { "name": "Portrait", "desc": "Studio ou extérieur, votre meilleur angle." },
       "event": { "name": "Événementiel", "desc": "Galas, lancements, soirées privées." },
       "family": { "name": "Famille", "desc": "Souvenirs intemporels à partager." }
     },
@@ -93,7 +95,9 @@
     "categories": {
       "studio": { "title": "Louer le studio", "subtitle": "Réservez l'espace pour votre projet." },
       "wedding": { "title": "Photographie mariage", "subtitle": "Réservez votre séance mariage." },
-      "portrait": { "title": "Séance portrait", "subtitle": "Réservez votre séance portrait." },
+      "portrait": { "title": "Portrait studio", "subtitle": "Réservez votre séance portrait." },
+      "anniversaire": { "title": "Séance anniversaire", "subtitle": "Réservez votre séance anniversaire." },
+      "grad_series": { "title": "The Grad Series", "subtitle": "Réservez votre séance de finissant·e." },
       "corporate": { "title": "Photographie corporative", "subtitle": "Réservez votre séance corporate." },
       "sport": { "title": "Photographie sport", "subtitle": "Réservez votre couverture sportive." },
       "event": { "title": "Événementiel", "subtitle": "Réservez la couverture de votre événement." },
@@ -187,6 +191,54 @@
       "studio-day": {
         "name": "Journée entière",
         "desc": "14 h non-stop, de 8 h à 22 h. Le forfait le plus avantageux."
+      },
+      "wedding-ceremonie": {
+        "name": "Cérémonie d'union",
+        "desc": "2 heures de couverture · 70 photos retouchées · galerie privée · livraison sous 10 jours."
+      },
+      "wedding-reception": {
+        "name": "Réception",
+        "desc": "4 heures de service · 170 photos retouchées · galerie privée · livraison sous 10 jours."
+      },
+      "wedding-complet": {
+        "name": "Forfait complet",
+        "desc": "8 heures — préparatifs, cérémonie et réception · 350 photos · livre photo 20 pages inclus."
+      },
+      "wedding-absolu": {
+        "name": "Forfait complet absolu",
+        "desc": "10 heures · 450 photos · setup photo · livre photo 20 pages inclus."
+      },
+      "portrait-essentiel": {
+        "name": "Essentiel",
+        "desc": "45 minutes en studio · 5 photos retouchées en haute résolution."
+      },
+      "portrait-integrale": {
+        "name": "Intégrale",
+        "desc": "1 heure en studio · 10 photos retouchées en haute résolution."
+      },
+      "portrait-absolu": {
+        "name": "Absolu",
+        "desc": "1 h 30 en studio · 15 photos retouchées en haute résolution."
+      },
+      "anniversaire-essentiel": {
+        "name": "Essentiel",
+        "desc": "45 minutes en studio · 5 photos retouchées de votre célébration."
+      },
+      "anniversaire-absolu": {
+        "name": "Absolu",
+        "desc": "1 h 30 en studio · 15 photos retouchées pour immortaliser la fête."
+      },
+      "grad-one": {
+        "name": "Grad One",
+        "desc": "45 minutes · 5 portraits retouchés en haute résolution."
+      },
+      "grad-two": {
+        "name": "Grad Two",
+        "desc": "1 heure · 10 portraits retouchés en haute résolution."
+      },
+      "grad-three": {
+        "name": "Grad Three",
+        "desc": "1 h 30 · 15 portraits retouchés en haute résolution."
       }
     }
   },
@@ -513,6 +565,112 @@
         "title": "Réservez votre séance famille",
         "subtitle": "Un moment pour vous, un souvenir pour toujours.",
         "button": "Nous contacter"
+      }
+    },
+    "anniversaire": {
+      "hero": {
+        "eyebrow": "Anniversaire",
+        "title": "Célébrez une autre année, en images",
+        "subtitle": "Une séance courte et festive en studio pour figer votre anniversaire — solo, en couple, en famille ou entre amis."
+      },
+      "intro": {
+        "title": "Une fête, des images qu'on regarde encore dans 10 ans",
+        "paragraphs": [
+          "Que ce soit pour les 1 an, les 30 ans ou les 70 ans, on prépare l'ambiance avec vous : décor, accessoires, mise en lumière. Vous arrivez, on s'occupe du reste.",
+          "Notre approche reste légère et joyeuse : on capture les vrais sourires, les fous rires, les regards entre proches."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Studio équipé", "desc": "Cycloramas, éclairage pro, fonds variés." },
+          { "title": "Décor festif", "desc": "Ballons, confettis, accessoires sur demande." },
+          { "title": "Photos retouchées", "desc": "5 à 15 images livrées en haute résolution." },
+          { "title": "Galerie privée", "desc": "Lien sécurisé pour partager avec vos invités." },
+          { "title": "Ambiance détendue", "desc": "On laisse place à la fête, pas aux poses figées." },
+          { "title": "Livraison rapide", "desc": "Vos images sous 7 jours maximum." }
+        ]
+      },
+      "gallery": {
+        "title": "Quelques anniversaires capturés",
+        "subtitle": "Tous les âges, toutes les ambiances."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Choisissez votre formule",
+        "subtitle": "Réservation en ligne, paiement sécurisé.",
+        "unavailable_title": "Réservation sur devis",
+        "unavailable_desc": "Contactez-nous pour une formule personnalisée."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Combien de personnes peuvent participer ?", "a": "Jusqu'à 10 personnes à l'aise dans le studio. Au-delà, on en discute ensemble." },
+          { "q": "Puis-je apporter mes propres accessoires ?", "a": "Absolument — apportez tout ce qui rend votre fête unique." },
+          { "q": "Est-ce adapté aux enfants ?", "a": "Oui, nous adaptons l'approche et l'ambiance selon l'âge des invités." },
+          { "q": "Quand recevons-nous les photos ?", "a": "Galerie privée livrée sous 7 jours après la séance." }
+        ]
+      },
+      "related": {
+        "title": "Vous pourriez aussi aimer"
+      },
+      "cta": {
+        "title": "Prêt à célébrer ?",
+        "subtitle": "Réservez votre créneau directement en ligne.",
+        "button": "Réserver maintenant"
+      }
+    },
+    "grad-series": {
+      "hero": {
+        "eyebrow": "The Grad Series",
+        "title": "Vos portraits de finissant·e, à votre image",
+        "subtitle": "Une séance studio pensée pour les finissant·es — toge, diplôme, ou simplement vous : on capte ce moment qui ne reviendra pas."
+      },
+      "intro": {
+        "title": "Le diplôme se fête, et il mérite ses portraits",
+        "paragraphs": [
+          "Secondaire, collégial, universitaire : chaque parcours mérite d'être célébré. Notre approche est moderne, lumineuse, loin du portrait scolaire classique.",
+          "Préparation envoyée par mail avant la séance, conseils style et posing, ambiance détendue — votre seule mission : profiter."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Studio équipé", "desc": "Cycloramas, fonds colorés, éclairage pro." },
+          { "title": "Plusieurs tenues", "desc": "Apportez 2 ou 3 looks, on alterne les ambiances." },
+          { "title": "Conseils posing", "desc": "On vous guide pour que ce soit naturel." },
+          { "title": "Photos retouchées", "desc": "5 à 15 portraits livrés en haute résolution." },
+          { "title": "Galerie en ligne", "desc": "Partagez avec la famille en un clic." },
+          { "title": "Livraison rapide", "desc": "Vos portraits sous 7 jours maximum." }
+        ]
+      },
+      "gallery": {
+        "title": "Portraits de finissant·es récents",
+        "subtitle": "Studio, lumière naturelle, looks variés."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Trois formules, un même standard",
+        "subtitle": "Réservation en ligne, paiement sécurisé.",
+        "unavailable_title": "Réservation sur devis",
+        "unavailable_desc": "Contactez-nous pour une formule personnalisée."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Dois-je apporter ma toge ?", "a": "Si vous l'avez déjà, oui — sinon nous travaillons avec ce que vous portez." },
+          { "q": "Puis-je venir avec un·e ami·e ?", "a": "Bien sûr, un proche aide souvent à se détendre devant l'objectif." },
+          { "q": "Y a-t-il un forfait groupe pour ma promo ?", "a": "Oui, contactez-nous pour un tarif de groupe (plusieurs personnes la même journée)." },
+          { "q": "Quand recevons-nous les photos ?", "a": "Galerie privée livrée sous 7 jours après la séance." }
+        ]
+      },
+      "related": {
+        "title": "Voir aussi"
+      },
+      "cta": {
+        "title": "Réservez votre Grad Series",
+        "subtitle": "Trois formules adaptées à tous les budgets.",
+        "button": "Réserver maintenant"
       }
     }
   }

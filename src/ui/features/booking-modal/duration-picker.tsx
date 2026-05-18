@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/src/ui/lib/cn";
-import { allowedDurations } from "@/src/application/booking/studio-packages";
+import { allowedDurations } from "@/src/application/booking/packages-registry";
 import type { Package } from "@/src/core/booking/package";
 
 export function DurationPicker({

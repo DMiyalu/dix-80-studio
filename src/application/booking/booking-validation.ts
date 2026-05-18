@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { contactSchema } from "./contact-validation";
-import { findPackageById, allowedDurations } from "./studio-packages";
+import { findPackageById, allowedDurations } from "./packages-registry";
 import { findCategory } from "./categories";
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -15,7 +15,7 @@ export const bookingSubmissionSchema = z
   .object({
     category: z.string().min(1),
     packageId: z.string().min(1),
-    durationHours: z.number().int().positive(),
+    durationHours: z.number().positive(),
     date: z.string().regex(DATE_RE, "invalid_date"),
     time: z.string().regex(TIME_RE, "invalid_time"),
     contact: contactSchema,

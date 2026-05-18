@@ -5,7 +5,7 @@ import {
   computePricing,
   formatCAD,
 } from "@/src/application/booking/pricing";
-import { findPackageById } from "@/src/application/booking/studio-packages";
+import { findPackageById } from "@/src/application/booking/packages-registry";
 import { endTime } from "@/src/application/booking/slot-generator";
 import type { Locale } from "@/src/i18n/config";
 import type { Dictionary } from "@/src/i18n/get-dictionary";

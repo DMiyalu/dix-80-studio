@@ -1,6 +1,4 @@
-import type { Package } from "@/src/core/booking/package";
 import type { BookingCategoryId } from "@/src/core/booking/booking";
-import { STUDIO_PACKAGES } from "./studio-packages";
 
 /**
  * Registry of bookable categories.
@@ -19,21 +17,17 @@ export interface CategoryEntry {
 
 export const BOOKING_CATEGORIES: readonly CategoryEntry[] = [
   { id: "studio", i18nKey: "studio", available: true },
-  { id: "wedding", i18nKey: "wedding", available: false },
-  { id: "portrait", i18nKey: "portrait", available: false },
+  { id: "wedding", i18nKey: "wedding", available: true },
+  { id: "portrait", i18nKey: "portrait", available: true },
+  { id: "anniversaire", i18nKey: "anniversaire", available: true },
+  { id: "grad-series", i18nKey: "grad_series", available: true },
   { id: "corporate", i18nKey: "corporate", available: false },
   { id: "sport", i18nKey: "sport", available: false },
   { id: "event", i18nKey: "event", available: false },
   { id: "family", i18nKey: "family", available: false },
 ] as const;
 
-/** Returns the package catalog for a category, or [] if none defined yet. */
-export function getPackagesForCategory(
-  id: BookingCategoryId,
-): readonly Package[] {
-  if (id === "studio") return STUDIO_PACKAGES;
-  return [];
-}
+export { getPackagesForCategory } from "./packages-registry";
 
 export function findCategory(id: BookingCategoryId): CategoryEntry | undefined {
   return BOOKING_CATEGORIES.find((c) => c.id === id);
