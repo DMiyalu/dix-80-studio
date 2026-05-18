@@ -189,5 +189,331 @@
         "desc": "14 h non-stop, de 8 h à 22 h. Le forfait le plus avantageux."
       }
     }
+  },
+  "servicePages": {
+    "common": {
+      "back_to_services": "Retour aux services",
+      "book_now": "Réserver",
+      "contact_us": "Nous contacter",
+      "starting_from": "À partir de"
+    },
+    "wedding": {
+      "hero": {
+        "eyebrow": "Mariage",
+        "title": "Vos noces, magnifiées",
+        "subtitle": "Une couverture complète et discrète, du premier regard à la dernière danse. On capture l'émotion vraie, sans la mettre en scène."
+      },
+      "intro": {
+        "title": "Une histoire d'amour, racontée en images",
+        "paragraphs": [
+          "Chaque mariage est unique. Notre approche documentaire privilégie les instants spontanés — un sourire, une larme, un éclat de rire — tout en sublimant les portraits formels qui traverseront les générations.",
+          "Nous travaillons avec un second photographe pour ne rien manquer, et livrons une galerie privée en ligne en moins de quatre semaines."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Couverture complète", "desc": "De la préparation à l'ouverture du bal, sans coupure." },
+          { "title": "Deux photographes", "desc": "Deux angles, deux regards, zéro moment manqué." },
+          { "title": "Galerie privée en ligne", "desc": "Partagez vos images facilement avec vos proches." },
+          { "title": "Retouche professionnelle", "desc": "Chaque image livrée est retravaillée avec soin." },
+          { "title": "Albums sur mesure", "desc": "Option d'album imprimé en lin ou cuir véritable." },
+          { "title": "Disponible partout au Québec", "desc": "Trois-Rivières, Montréal, Québec, Charlevoix…" }
+        ]
+      },
+      "gallery": {
+        "title": "Quelques moments capturés",
+        "subtitle": "Un aperçu de mariages récents."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Des formules pensées pour vous",
+        "subtitle": "Une réponse personnalisée sous 24 heures.",
+        "unavailable_title": "Réservation sur devis",
+        "unavailable_desc": "Chaque mariage étant unique, contactez-nous pour recevoir une proposition adaptée à votre date, votre lieu et votre rêve."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "À quelle distance vous déplacez-vous ?", "a": "Sans supplément dans un rayon de 100 km autour de Trois-Rivières. Au-delà, les frais de déplacement sont calculés au cas par cas." },
+          { "q": "Combien de photos recevons-nous ?", "a": "Comptez entre 500 et 900 images retouchées pour une couverture complète." },
+          { "q": "Sous combien de temps recevrons-nous la galerie ?", "a": "La galerie privée est livrée sous quatre semaines maximum." },
+          { "q": "Que se passe-t-il en cas de pluie ?", "a": "Nous avons un plan B intérieur pour chaque mariage et un équipement adapté à toutes les conditions." }
+        ]
+      },
+      "related": {
+        "title": "Autres services qui pourraient vous intéresser"
+      },
+      "cta": {
+        "title": "Parlons de votre mariage",
+        "subtitle": "Réservez un appel découverte gratuit pour discuter de votre projet.",
+        "button": "Nous contacter"
+      }
+    },
+    "portrait": {
+      "hero": {
+        "eyebrow": "Portrait",
+        "title": "Votre meilleur angle",
+        "subtitle": "Séance en studio ou en extérieur. On vous met à l'aise, on capte ce qui vous ressemble — pas une pose figée."
+      },
+      "intro": {
+        "title": "Un portrait qui vous ressemble vraiment",
+        "paragraphs": [
+          "Que ce soit pour un usage personnel, professionnel ou artistique, nous prenons le temps d'échanger en amont pour comprendre votre intention et choisir ensemble le bon décor, la bonne lumière, le bon style.",
+          "Aucune expérience requise : notre rôle est de vous guider, pas de vous corriger."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Séance de 60 à 90 min", "desc": "Le temps de se détendre et d'explorer plusieurs ambiances." },
+          { "title": "Studio équipé", "desc": "Fonds variés, éclairage pro, cycloramas blanc et noir." },
+          { "title": "Conseils style & posing", "desc": "Préparation envoyée par mail avant la séance." },
+          { "title": "Sélection retouchée", "desc": "10 à 20 photos finalisées en haute résolution." },
+          { "title": "Galerie en ligne", "desc": "Accès privé pour consulter et télécharger vos images." },
+          { "title": "Livraison rapide", "desc": "Vos portraits dans votre boîte mail sous 7 jours." }
+        ]
+      },
+      "gallery": {
+        "title": "Portraits récents",
+        "subtitle": "Studio et extérieur, hommes, femmes, enfants."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Des formules simples et transparentes",
+        "subtitle": "Tout est inclus, pas de mauvaise surprise.",
+        "unavailable_title": "Réservation sur devis",
+        "unavailable_desc": "Pour les portraits, contactez-nous afin de choisir ensemble la formule qui vous correspond le mieux."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Dois-je apporter plusieurs tenues ?", "a": "Deux ou trois tenues suffisent ; nous vous envoyons un guide complet avant la séance." },
+          { "q": "Puis-je venir accompagné(e) ?", "a": "Bien sûr. Un proche aide souvent à se détendre devant l'objectif." },
+          { "q": "Faites-vous le maquillage ?", "a": "Pas directement, mais nous travaillons avec d'excellents maquilleurs sur demande." },
+          { "q": "Sous quel format sont livrées les photos ?", "a": "JPEG haute résolution, retouchés. Les fichiers RAW restent confidentiels." }
+        ]
+      },
+      "related": {
+        "title": "Vous pourriez aussi aimer"
+      },
+      "cta": {
+        "title": "Prêt(e) pour votre séance ?",
+        "subtitle": "On en discute autour d'un café (en personne ou en visio).",
+        "button": "Réserver une séance"
+      }
+    },
+    "corporate": {
+      "hero": {
+        "eyebrow": "Corporate",
+        "title": "Votre image de marque, à la hauteur",
+        "subtitle": "Portraits d'équipe, photos de bureaux, événements internes : une image cohérente, professionnelle, sans le côté guindé."
+      },
+      "intro": {
+        "title": "Une photographie qui sert votre marque",
+        "paragraphs": [
+          "Nous accompagnons les PME, agences et grandes entreprises au Québec dans la production de visuels qui renforcent leur identité — site web, LinkedIn, rapport annuel, campagnes.",
+          "Notre approche : comprendre votre marque avant la séance, livrer rapidement, fournir des fichiers prêts à l'emploi pour le web et l'impression."
+        ]
+      },
+      "features": {
+        "title": "Nos prestations corporate",
+        "items": [
+          { "title": "Portraits d'équipe", "desc": "Sur site ou en studio, dans une ambiance détendue." },
+          { "title": "Photos de bureaux", "desc": "Architecture, espaces de travail, vie d'équipe." },
+          { "title": "Événements internes", "desc": "Lancements, formations, célébrations d'entreprise." },
+          { "title": "Reportage de marque", "desc": "Racontez votre savoir-faire en images." },
+          { "title": "Livraison rapide", "desc": "Aperçus sous 48 h, livraison finale sous 7 jours." },
+          { "title": "Charte visuelle respectée", "desc": "Cohérence avec votre identité graphique." }
+        ]
+      },
+      "gallery": {
+        "title": "Travaux récents",
+        "subtitle": "Pour des entreprises de la Mauricie et au-delà."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Une offre adaptée à votre besoin",
+        "subtitle": "Devis personnalisé selon le nombre de personnes et la durée.",
+        "unavailable_title": "Demande de devis",
+        "unavailable_desc": "Contactez-nous avec une brève description de votre projet pour recevoir une proposition détaillée sous 24 heures."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Pouvez-vous vous déplacer dans nos bureaux ?", "a": "Oui, partout au Québec. Pour les grands volumes (50+ portraits), nous installons un mini-studio sur place." },
+          { "q": "Quels droits d'utilisation sont inclus ?", "a": "Licence illimitée pour vos usages web, sociaux et imprimés. Cession exclusive disponible en option." },
+          { "q": "Combien de temps prend un portrait individuel ?", "a": "Comptez 10 à 15 minutes par personne pour un résultat optimal." },
+          { "q": "Acceptez-vous les paiements par bon de commande ?", "a": "Oui, nous facturons selon vos modalités habituelles (NET 30, etc.)." }
+        ]
+      },
+      "related": {
+        "title": "Autres services"
+      },
+      "cta": {
+        "title": "Renforçons votre marque ensemble",
+        "subtitle": "Devis sous 24 heures, sans engagement.",
+        "button": "Demander un devis"
+      }
+    },
+    "sport": {
+      "hero": {
+        "eyebrow": "Sport",
+        "title": "L'intensité, figée au millième",
+        "subtitle": "Couverture d'événements sportifs, portraits d'athlètes, action en compétition. Du hockey au MMA en passant par le cyclisme."
+      },
+      "intro": {
+        "title": "Pour les athlètes qui veulent marquer les esprits",
+        "paragraphs": [
+          "Le sport, c'est l'instant. Notre équipement nous permet de geler l'action au 1/4000 de seconde et de capturer l'effort, la concentration, la victoire.",
+          "Nous couvrons aussi bien les compétitions élites que les portraits de sponsoring et les contenus pour réseaux sociaux."
+        ]
+      },
+      "features": {
+        "title": "Ce que nous proposons",
+        "items": [
+          { "title": "Couverture d'événements", "desc": "Tournois, finales, matchs de saison régulière." },
+          { "title": "Portraits d'athlètes", "desc": "Studio ou environnement sportif, look éditorial." },
+          { "title": "Contenu réseaux sociaux", "desc": "Format vertical, livraison express le jour même." },
+          { "title": "Photos de sponsors", "desc": "Mise en valeur des partenaires et logos." },
+          { "title": "Action haute vitesse", "desc": "Téléobjectifs pro pour capter l'instant décisif." },
+          { "title": "Livraison rapide", "desc": "Aperçus en moins de 24 heures pour les médias." }
+        ]
+      },
+      "gallery": {
+        "title": "Sélection récente",
+        "subtitle": "Compétitions et portraits."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Tarifs selon l'événement",
+        "subtitle": "Demi-journée, journée complète ou saison.",
+        "unavailable_title": "Demande de devis",
+        "unavailable_desc": "Décrivez-nous votre sport, le format de l'événement et la livraison attendue — réponse sous 24 heures."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Travaillez-vous avec des fédérations ?", "a": "Oui, nous collaborons régulièrement avec des fédérations et ligues régionales." },
+          { "q": "Délais de livraison pour la presse ?", "a": "Aperçus livrés en moins de 4 heures sur demande pour les usages médias." },
+          { "q": "Couvrez-vous les sports extrêmes ?", "a": "Oui, notre équipement et notre expérience nous permettent de couvrir tout sport en toute sécurité." },
+          { "q": "Pouvez-vous filmer également ?", "a": "Oui, nous proposons une couverture vidéo (clips, ralentis) en complément." }
+        ]
+      },
+      "related": {
+        "title": "Voir aussi"
+      },
+      "cta": {
+        "title": "Couvrons votre prochain événement",
+        "subtitle": "Une intensité qui mérite d'être immortalisée.",
+        "button": "Nous contacter"
+      }
+    },
+    "event": {
+      "hero": {
+        "eyebrow": "Événementiel",
+        "title": "Galas, lancements, soirées",
+        "subtitle": "Une couverture discrète et dynamique de votre événement, des coulisses au dernier verre."
+      },
+      "intro": {
+        "title": "L'événement, vu de tous les angles",
+        "paragraphs": [
+          "Gala caritatif, lancement de produit, soirée privée, conférence : nous capturons l'ambiance, les rencontres, les moments forts, sans jamais perturber le déroulé.",
+          "Livraison rapide pour vos relations presse et réseaux sociaux : aperçus le lendemain, galerie complète sous 5 jours."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Couverture flexible", "desc": "De 2 heures à la journée complète." },
+          { "title": "Approche discrète", "desc": "Présence neutre, pas de mise en scène intrusive." },
+          { "title": "Portraits invités", "desc": "Mini-studio sur place sur demande." },
+          { "title": "Live photos", "desc": "Diffusion en temps réel pour vos écrans ou réseaux." },
+          { "title": "Galerie en ligne", "desc": "Partage facile avec vos invités et partenaires." },
+          { "title": "Vidéo en option", "desc": "Aftermovie ou capsules pour vos réseaux." }
+        ]
+      },
+      "gallery": {
+        "title": "Événements récents",
+        "subtitle": "Galas, conférences, lancements."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Tarification selon la durée",
+        "subtitle": "Devis personnalisé en fonction de votre événement.",
+        "unavailable_title": "Demande de devis",
+        "unavailable_desc": "Indiquez-nous le type d'événement, sa durée et le lieu — nous vous proposons une formule adaptée sous 24 heures."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Combien de photographes sur place ?", "a": "Un photographe est inclus ; un second peut être ajouté pour les grands événements." },
+          { "q": "Quelle tenue portez-vous ?", "a": "Tenue cocktail ou cravate selon le format. Discrets et professionnels." },
+          { "q": "Pouvez-vous livrer le soir même ?", "a": "Oui, livraison express le jour même possible en option." },
+          { "q": "Travaillez-vous avec des agences événementielles ?", "a": "Oui, nous collaborons régulièrement avec plusieurs agences au Québec." }
+        ]
+      },
+      "related": {
+        "title": "Autres prestations"
+      },
+      "cta": {
+        "title": "Parlons de votre événement",
+        "subtitle": "Réponse sous 24 heures, devis sans engagement.",
+        "button": "Nous contacter"
+      }
+    },
+    "family": {
+      "hero": {
+        "eyebrow": "Famille",
+        "title": "Des souvenirs à partager pour longtemps",
+        "subtitle": "Séance famille en studio ou en extérieur, dans une ambiance détendue et joyeuse — particulièrement pour les enfants."
+      },
+      "intro": {
+        "title": "Le temps qui passe mérite d'être encadré",
+        "paragraphs": [
+          "Les enfants grandissent vite, les générations se croisent rarement. Une séance famille, c'est un cadeau pour demain — et un moment agréable aujourd'hui.",
+          "Nous adaptons notre approche selon l'âge des enfants : jeux, histoires, ou laisser-faire pour saisir les vrais sourires."
+        ]
+      },
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": [
+          { "title": "Séance de 60 à 90 min", "desc": "Le temps de mettre tout le monde à l'aise." },
+          { "title": "Studio ou extérieur", "desc": "Au choix selon la saison et vos envies." },
+          { "title": "Approche enfant-friendly", "desc": "On joue, on rit, on capture les vrais instants." },
+          { "title": "Portraits et groupes", "desc": "Du couple aux générations réunies." },
+          { "title": "15 à 25 photos retouchées", "desc": "Livrées en haute résolution." },
+          { "title": "Galerie en ligne", "desc": "Partagez avec vos grands-parents en un clic." }
+        ]
+      },
+      "gallery": {
+        "title": "Séances famille récentes",
+        "subtitle": "Studio, parcs, à la maison."
+      },
+      "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Des formules simples",
+        "subtitle": "Idéales pour offrir ou s'offrir un beau souvenir.",
+        "unavailable_title": "Réservation sur devis",
+        "unavailable_desc": "Contactez-nous pour choisir ensemble la formule qui correspond à votre famille."
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": [
+          { "q": "Combien de personnes peuvent participer ?", "a": "Jusqu'à 15 personnes sans supplément. Au-delà, prévoyez un peu plus de temps." },
+          { "q": "Avez-vous des conseils pour les tenues ?", "a": "Privilégiez des couleurs harmonisées plutôt qu'identiques. Nous vous envoyons un guide." },
+          { "q": "Peut-on inclure le chien ?", "a": "Bien sûr, les animaux font partie de la famille !" },
+          { "q": "Offrez-vous des bons cadeaux ?", "a": "Oui, parfaits pour Noël, Fête des Mères ou un anniversaire." }
+        ]
+      },
+      "related": {
+        "title": "Voir aussi"
+      },
+      "cta": {
+        "title": "Réservez votre séance famille",
+        "subtitle": "Un moment pour vous, un souvenir pour toujours.",
+        "button": "Nous contacter"
+      }
+    }
   }
 }
