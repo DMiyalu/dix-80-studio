@@ -3,7 +3,6 @@ import type { Dictionary } from "@/src/i18n/get-dictionary";
 import type { ServiceCategoryDetails } from "@/src/core/services/service-category-details";
 import { Reveal } from "@/src/ui/components/reveal";
 import { ServiceHero } from "./sections/service-hero";
-import { ServiceIntro } from "./sections/service-intro";
 import { ServiceFeatures } from "./sections/service-features";
 import { ServiceGallery } from "./sections/service-gallery";
 import { ServicePricing } from "./sections/service-pricing";
@@ -15,6 +14,14 @@ import { isServicePageKey } from "./service-page-content";
 /**
  * Reusable layout for every category landing page.
  * Editing a sub-section here updates all category pages at once.
+ *
+ * Section order (after hero):
+ *   1. Pricing
+ *   2. Features ("Ce qui est inclus")
+ *   3. Gallery  ("Quelques moments capturés")
+ *   4. FAQ
+ *   5. Related  ("Autres services")
+ *   6. CTA
  */
 export function ServicePage({
   lang,
@@ -38,16 +45,8 @@ export function ServicePage({
         imageUrl={details.heroImage}
         backHref={`/${lang}#services`}
         categoryId={details.id}
+        ctaLabel={dict.hero.cta_primary}
       />
-      <Reveal>
-        <ServiceIntro content={content} imageUrl={details.introImage} />
-      </Reveal>
-      <Reveal>
-        <ServiceFeatures content={content} />
-      </Reveal>
-      <Reveal>
-        <ServiceGallery content={content} images={details.gallery} />
-      </Reveal>
       <Reveal>
         <ServicePricing
           lang={lang}
@@ -58,6 +57,12 @@ export function ServicePage({
         />
       </Reveal>
       <Reveal>
+        <ServiceFeatures content={content} />
+      </Reveal>
+      <Reveal>
+        <ServiceGallery content={content} images={details.gallery} />
+      </Reveal>
+      <Reveal>
         <ServiceFaq content={content} />
       </Reveal>
       <Reveal>
@@ -65,7 +70,7 @@ export function ServicePage({
           lang={lang}
           dict={dict}
           currentId={details.id}
-          content={content}
+          common={common}
         />
       </Reveal>
       <ServiceCta

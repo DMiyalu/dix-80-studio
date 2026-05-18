@@ -3,8 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Container } from "@/src/ui/components/container";
 import { cn } from "@/src/ui/lib/cn";
-import { useAppDispatch } from "@/src/infrastructure/store/hooks";
-import { bookingActions } from "@/src/infrastructure/store/booking-slice";
+import { HeroBookingButton } from "@/src/ui/features/booking-modal/hero-booking-button";
 
 export type HeroSlide = {
   category: string;
@@ -23,7 +22,6 @@ export function HeroSlider({
   ctaPrimary: string;
   intervalMs?: number;
 }) {
-  const dispatch = useAppDispatch();
   const [index, setIndex] = useState(0);
   const total = slides.length;
 
@@ -104,13 +102,7 @@ export function HeroSlider({
             {current.subtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={() => dispatch(bookingActions.openSelector())}
-              className="inline-flex h-14 cursor-pointer items-center justify-center rounded-full border border-white/60 bg-white/10 px-9 text-sm font-medium uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/20"
-            >
-              {ctaPrimary}
-            </button>
+            <HeroBookingButton>{ctaPrimary}</HeroBookingButton>
           </div>
         </div>
       </Container>
